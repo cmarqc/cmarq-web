@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { PhotoCarousel } from '@/components/photography/PhotoCarousel'
 import { PhotoGallery } from '@/components/photography/PhotoGallery'
 import { featuredPhotos, galleryPhotos } from '@/data/photos'
-import { FiCamera, FiShoppingBag } from 'react-icons/fi'
+import { FiCamera, FiInstagram, FiShoppingBag } from 'react-icons/fi'
 
 export const metadata: Metadata = {
   title: 'Photography',
@@ -22,8 +22,7 @@ export default function PhotographyPage() {
           </div>
           <div className="section-divider" />
           <p className="section-subheading max-w-2xl">
-            Capturing moments across the Pacific Northwest and beyond. Hover any photo to inquire
-            about a print.
+            Capturing moments — Focused on the experience
           </p>
         </div>
 
