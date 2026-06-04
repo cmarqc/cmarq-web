@@ -1,9 +1,41 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FiDownload, FiBriefcase, FiBook, FiCode } from 'react-icons/fi'
-import { experienceGroups, education } from '@/data/experience'
+import { FiDownload, FiBriefcase, FiBook, FiCode, FiGlobe, FiDatabase, FiUsers, FiHeart } from 'react-icons/fi'
+import {
+  SiTypescript, SiJavascript, SiSharp, SiPython, SiHtml5, SiCss,
+  SiReact, SiNextdotjs, SiTailwindcss, SiFramer,
+  SiDotnet, SiNodedotjs, SiGit, SiGithub, SiFigma, SiJira,
+} from 'react-icons/si'
+import { FaJava } from 'react-icons/fa'
+import { VscAzure, VscVscode } from 'react-icons/vsc'
+import { experienceGroups, volunteerGroups, education, organizations } from '@/data/experience'
 import { skillGroups } from '@/data/skills'
+
+const skillIcons: Record<string, React.ReactNode> = {
+  TypeScript:     <SiTypescript size={13} />,
+  JavaScript:     <SiJavascript size={13} />,
+  'C#':           <SiSharp size={13} />,
+  Python:         <SiPython size={13} />,
+  Java:           <FaJava size={13} />,
+  HTML:           <SiHtml5 size={13} />,
+  CSS:            <SiCss size={13} />,
+  React:          <SiReact size={13} />,
+  'Next.js':      <SiNextdotjs size={13} />,
+  'Tailwind CSS': <SiTailwindcss size={13} />,
+  'Framer Motion':<SiFramer size={13} />,
+  '.NET':         <SiDotnet size={13} />,
+  'Node.js':      <SiNodedotjs size={13} />,
+  Azure:          <VscAzure size={13} />,
+  'REST APIs':    <FiGlobe size={13} />,
+  KQL:            <FiDatabase size={13} />,
+  SQL:            <FiDatabase size={13} />,
+  Git:            <SiGit size={13} />,
+  GitHub:         <SiGithub size={13} />,
+  'VS Code':      <VscVscode size={13} />,
+  Figma:          <SiFigma size={13} />,
+  Jira:           <SiJira size={13} />,
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -160,26 +192,154 @@ export default function ResumePage() {
 
                 <div className="relative">
                   <div className="absolute left-4 top-1.5 bottom-0 w-px bg-zinc-200 dark:bg-zinc-700" />
-                  <div className="pl-12">
+                  <div className="space-y-8 pl-12">
                     {education.map((edu) => (
                       <div key={edu.id} className="relative">
                         <div className="absolute -left-[2.05rem] top-1.5 w-3 h-3 rounded-full bg-brand border-2 border-white dark:border-surface-dark" />
                         <div className="card">
-                          <div className="flex flex-wrap items-start justify-between gap-2">
+                          {/* School header */}
+                          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
+                            {edu.logo && (
+                              <img src={edu.logo} alt={edu.school} className="w-5 h-5 object-contain" />
+                            )}
+                            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
+                              {edu.school}
+                            </h3>
+                          </div>
+                          <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                             <div>
-                              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
-                                {edu.school}
-                              </h3>
                               <p className="text-brand font-medium text-sm">
-                                {edu.degree} — {edu.field}
+                                {edu.degree}{edu.field ? ` — ${edu.field}` : ''}
                               </p>
                               <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-1">
                                 {edu.location}
                               </p>
                             </div>
+                            <div className="flex flex-col items-end gap-1">
+                              <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 shrink-0">
+                                {edu.period}
+                              </span>
+                              {edu.gpa && (
+                                <span className="tag text-xs">GPA {edu.gpa}</span>
+                              )}
+                            </div>
+                          </div>
+                          {edu.bullets && edu.bullets.length > 0 && (
+                            <ul className="space-y-1.5">
+                              {edu.bullets.map((bullet, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-300">
+                                  <span className="w-1 h-1 rounded-full bg-brand mt-2 shrink-0" />
+                                  {bullet}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.section>
+
+              {/* Organizations */}
+              <motion.section variants={itemVariants}>
+                <div className="flex items-center gap-2 mb-6">
+                  <FiUsers className="text-brand" size={20} />
+                  <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                    Organizations
+                  </h2>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute left-4 top-1.5 bottom-0 w-px bg-zinc-200 dark:bg-zinc-700" />
+                  <div className="space-y-8 pl-12">
+                    {organizations.map((org) => (
+                      <div key={org.id} className="relative">
+                        <div className="absolute -left-[2.05rem] top-1.5 w-3 h-3 rounded-full bg-brand border-2 border-white dark:border-surface-dark" />
+                        <div className="card">
+                          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
+                            {org.logo && (
+                              <img src={org.logo} alt={org.name} className="w-5 h-5 object-contain" />
+                            )}
+                            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
+                              {org.name}
+                            </h3>
+                          </div>
+                          <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                            <div>
+                              {org.affiliation && (
+                                <p className="text-brand font-medium text-sm">{org.affiliation}</p>
+                              )}
+                            </div>
                             <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 shrink-0">
-                              {edu.period}
+                              {org.period}
                             </span>
+                          </div>
+                          <ul className="space-y-1.5">
+                            {org.bullets.map((bullet, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-300">
+                                <span className="w-1 h-1 rounded-full bg-brand mt-2 shrink-0" />
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.section>
+
+              {/* Volunteering */}
+              <motion.section variants={itemVariants}>
+                <div className="flex items-center gap-2 mb-6">
+                  <FiHeart className="text-brand" size={20} />
+                  <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                    Volunteering
+                  </h2>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute left-4 top-1.5 bottom-0 w-px bg-zinc-200 dark:bg-zinc-700" />
+                  <div className="space-y-8 pl-12">
+                    {volunteerGroups.map((group) => (
+                      <div key={group.id} className="relative">
+                        <div className="absolute -left-[2.05rem] top-1.5 w-3 h-3 rounded-full bg-brand border-2 border-white dark:border-surface-dark" />
+                        <div className="card">
+                          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
+                            {group.logo && (
+                              <img src={group.logo} alt={group.company} className="w-5 h-5 object-contain" />
+                            )}
+                            <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
+                              {group.company}
+                            </h3>
+                          </div>
+                          <div className="relative pl-7 space-y-5">
+                            {group.roles.length > 1 && (
+                              <div className="absolute left-[9px] top-1.5 bottom-0 w-0.5 bg-zinc-200 dark:bg-zinc-700" />
+                            )}
+                            {group.roles.map((role) => (
+                              <div key={role.id} className="relative">
+                                {group.roles.length > 1 && (
+                                  <div className="absolute -left-6 top-1.5 w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-zinc-600 border-2 border-white dark:border-zinc-900 z-10" />
+                                )}
+                                <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                  <div>
+                                    <p className="font-medium text-zinc-800 dark:text-zinc-200 text-sm">{role.role}</p>
+                                    <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-0.5">{role.location}</p>
+                                  </div>
+                                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">{role.period}</span>
+                                </div>
+                                <ul className="space-y-1.5">
+                                  {role.bullets.map((bullet, j) => (
+                                    <li key={j} className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-300">
+                                      <span className="w-1 h-1 rounded-full bg-brand mt-2 shrink-0" />
+                                      {bullet}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       </div>
@@ -205,8 +365,9 @@ export default function ResumePage() {
                     {group.items.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 rounded-lg text-sm font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-brand/10 dark:hover:bg-brand/20 hover:text-brand dark:hover:text-red-400 transition-colors duration-200 cursor-default"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-brand/10 dark:hover:bg-brand/20 hover:text-brand dark:hover:text-red-400 transition-colors duration-200 cursor-default"
                       >
+                        {skillIcons[skill]}
                         {skill}
                       </span>
                     ))}

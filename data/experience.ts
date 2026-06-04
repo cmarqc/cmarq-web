@@ -18,10 +18,22 @@ export interface ExperienceGroup {
 export interface Education {
   id: string
   school: string
+  logo?: string
   degree: string
-  field: string
+  field?: string
   period: string
   location: string
+  gpa?: string
+  bullets?: string[]
+}
+
+export interface Organization {
+  id: string
+  name: string
+  logo?: string
+  affiliation?: string
+  period: string
+  bullets: string[]
 }
 
 export const experienceGroups: ExperienceGroup[] = [
@@ -100,9 +112,48 @@ export const experienceGroups: ExperienceGroup[] = [
         type: 'part-time',
         bullets: [
           'Developed curriculum focused on robotics and programming in Python for youth students',
-          'Taught coding concepts and led hands-on engineering workshops',
+          'Taught coding concepts and led hands-on engineering workshops for K-12 students',
         ],
         tech: ['Python', 'Robotics'],
+      },
+    ],
+  },
+]
+
+export const volunteerGroups: ExperienceGroup[] = [
+  {
+    id: 'dawgs-crew',
+    company: "Dawg's Crew",
+    logo: '/logos/dawg_crew.png',
+    roles: [
+      {
+        id: 'dawgs-crew-assistant',
+        role: 'Move-In Assistant',
+        period: 'Sep 2019 – Sep 2021',
+        location: 'Seattle, WA',
+        type: 'volunteer',
+        bullets: [
+          'Assisted new and returning residents during UW\'s annual move-in, supporting elevator operations, cart logistics, and on-site guidance',
+          'Helped create a welcoming and smooth transition experience for hundreds of incoming students over two years',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'mims',
+    company: 'Mercer Island Middle School',
+    logo: '',
+    roles: [
+      {
+        id: 'mims-coach',
+        role: 'Volunteer Basketball Coach',
+        period: 'Nov 2017 – Mar 2018',
+        location: 'Mercer Island, WA',
+        type: 'volunteer',
+        bullets: [
+          'Coached 7th and 8th grade girls basketball teams, supporting skill development, teamwork, and athlete confidence during practices',
+          'Managed game-day operations including scorekeeping and shot clock, and assisted coaching staff with play calling and in-game strategy',
+        ],
       },
     ],
   },
@@ -112,9 +163,65 @@ export const education: Education[] = [
   {
     id: 'uw',
     school: 'University of Washington',
+    logo: '/logos/uw.png',
     degree: "Bachelor's of Science",
     field: 'Informatics',
-    period: '2018 – 2022',
+    period: '2019 – 2022',
     location: 'Seattle, WA',
+    gpa: '3.74',
+    bullets: [
+      "Dean's List: Autumn 2019, 2020–21, 2021–22",
+      'Notable courses: Data Structures & Algorithms, Databases & Data Modeling, Client-Side & Server-Side Web Development, Cooperative Software Development, iOS Mobile Development, INFO Capstone',
+    ],
+  },
+  {
+    id: 'bc',
+    school: 'Bellevue College',
+    logo: '/logos/bc.png',
+    degree: 'Associate of Arts',
+    field: 'Running Start Transfer',
+    period: '2017 – 2019',
+    location: 'Bellevue, WA',
+    gpa: '3.64',
+    bullets: [
+      'Completed the Running Start dual-enrollment program, earning transferable college credits while in high school',
+      'Notable courses: CS 210/211, Web Programming 109, Calculus 151/152, Physics 121, Critical Thinking 115',
+    ],
+  },
+  {
+    id: 'hazen',
+    school: 'Hazen High School',
+    logo: '/logos/hzn.png',
+    degree: 'High School Diploma',
+    period: '2015 – 2019',
+    location: 'Renton, WA',
+    gpa: '3.82',
+    bullets: [
+      '3x Varsity Letter in Golf, 2x NPSL Scholar Athlete, 3x Academic All-Star',
+    ],
+  },
+]
+
+export const organizations: Organization[] = [
+  {
+    id: 'yeoc',
+    name: 'Young Executives of Color (YEOC)',
+    logo: '/logos/yeoc.png',
+    affiliation: 'University of Washington',
+    period: 'Sep 2018 – May 2019',
+    bullets: [
+      'Competitively selected as one of 170 participants from 700+ applicants for this UW business leadership program',
+      'Developed business acumen through workshops covering strategy, finance, marketing, and professional development',
+      "Led team to 3rd place in a renowned case competition hosted through the YEOC program",
+    ],
+  },
+  {
+    id: 'brotherhood',
+    name: 'Brotherhood Initiative',
+    affiliation: 'University of Washington',
+    period: '2019 – 2022',
+    bullets: [
+      'Member of a UW program dedicated to empowering undergraduate men of color through mentorship, peer support, and leadership development',
+    ],
   },
 ]
