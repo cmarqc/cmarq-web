@@ -21,8 +21,20 @@ export default function PhotographyPage() {
             <h1 className="section-heading mb-0">Photography</h1>
           </div>
           <div className="section-divider" />
-          <p className="section-subheading max-w-2xl">
+          <p className="section-subheading max-w-2xl mb-0">
             Capturing moments — Focused on the experience
+          </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            Check out and follow my photography Instagram!{' '}
+            <a
+              href="https://www.instagram.com/cmc.snaps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-brand hover:underline"
+            >
+              <FiInstagram size={14} />
+              @cmc.snaps
+            </a>
           </p>
         </div>
 
@@ -62,6 +74,15 @@ export default function PhotographyPage() {
                 All photos are available as high-quality prints in a variety of sizes and finishes.
                 Reach out through the contact form for pricing, sizing options, and shipping details.
               </p>
+              <a
+                href="https://www.instagram.com/cmc.snaps"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-2 text-sm text-brand hover:underline"
+              >
+                <FiInstagram size={13} />
+                Follow @cmc.snaps for more
+              </a>
             </div>
           </div>
         </section>
