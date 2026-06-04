@@ -111,9 +111,15 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
 
             <div>
               <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-1.5">
-                Category
+                {photo.category.length === 1 ? 'Category' : 'Categories'}
               </p>
-              <span className="tag capitalize">{photo.category}</span>
+              <div className="flex flex-wrap gap-1.5">
+                {photo.category.map((cat) => (
+                  <span key={cat} className="tag capitalize">
+                    {cat}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {photo.available && photo.price != null && (
