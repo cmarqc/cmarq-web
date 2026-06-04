@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-light text-zinc-900 dark:bg-surface-dark dark:text-zinc-100;
+    font-family: var(--font-ibm-plex-sans), Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-200 dark:bg-zinc-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-hover;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2;
+  }
+
+  .section-subheading {
+    @apply text-lg text-zinc-500 dark:text-zinc-400 mb-10;
+  }
+
+  .section-divider {
+    @apply w-16 h-1 bg-brand rounded-full mb-8;
+  }
+
+  .card {
+    @apply bg-white dark:bg-surface-card-dark rounded-2xl p-6 shadow-sm border border-zinc-100 dark:border-zinc-800 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-1 hover:border-brand/30 dark:hover:border-brand/30;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-brand hover:bg-brand-hover text-white font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand/25 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold rounded-xl transition-all duration-200 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-zinc-600 dark:text-zinc-400 hover:text-brand dark:hover:text-brand font-medium rounded-lg transition-colors duration-200;
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-brand dark:hover:text-brand transition-colors duration-200 rounded-lg hover:bg-brand/5 dark:hover:bg-brand/10;
+  }
+
+  .nav-link-active {
+    @apply text-brand dark:text-brand bg-brand/5 dark:bg-brand/10;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium bg-brand/10 text-brand dark:bg-brand/20 dark:text-red-400 rounded-full;
+  }
+}
+
+/* Embla Carousel */
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* Page transition wrapper */
+.page-transition {
+  min-height: calc(100vh - 64px - 80px);
+}

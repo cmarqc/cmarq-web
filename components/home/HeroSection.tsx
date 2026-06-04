@@ -1,0 +1,95 @@
+'use client'
+
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { FiArrowRight, FiDownload } from 'react-icons/fi'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+}
+
+export function HeroSection() {
+  return (
+    <section className="relative min-h-[calc(100vh-64px)] flex items-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-surface-light via-surface-light to-zinc-200 dark:from-surface-nav-dark dark:via-surface-dark dark:to-zinc-900 -z-10" />
+
+      {/* Decorative red accent blob */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand/5 dark:bg-brand/10 rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-brand/5 dark:bg-brand/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+
+      <div className="page-container py-20 w-full">
+        <motion.div
+          className="max-w-3xl"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            variants={itemVariants}
+            className="text-sm font-semibold text-brand uppercase tracking-widest mb-4"
+          >
+            Software Engineer II @ Microsoft
+          </motion.p>
+
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-zinc-900 dark:text-zinc-50 leading-tight mb-6"
+          >
+            Hey, I&apos;m{' '}
+            <span className="relative inline-block">
+              Christian
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-brand rounded-full" />
+            </span>
+            .
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 leading-relaxed mb-10 max-w-2xl"
+          >
+            "I'm just a simple man trying to make my way in the universe."
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <Link href="/projects" className="btn-primary text-base">
+              View My Work
+              <FiArrowRight size={18} />
+            </Link>
+            <Link href="/resume" className="btn-secondary text-base">
+              Resume
+              <FiDownload size={18} />
+            </Link>
+            <Link href="/photography" className="btn-ghost text-base">
+              Photography →
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-zinc-400 dark:text-zinc-600"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+      >
+        <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <motion.div
+          className="w-px h-8 bg-gradient-to-b from-zinc-400 to-transparent dark:from-zinc-600"
+          animate={{ scaleY: [1, 0.6, 1] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+        />
+      </motion.div>
+    </section>
+  )
+}

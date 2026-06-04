@@ -1,0 +1,2 @@
+Replace this file with your actual resume PDF at: /public/resume.pdf
+The Resume page links to /resume.pdf for download.
