@@ -52,10 +52,11 @@ export default function PhotographyPage() {
             <h2 className="text-xl font-semibold text-zinc-700 dark:text-zinc-300">
               Full Gallery
             </h2>
-            <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-2 rounded-lg">
+            {/* Coming Soon */}
+            {/* <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-2 rounded-lg">
               <FiShoppingBag size={14} className="text-brand" />
               Prints available — hover a photo to purchase
-            </div>
+            </div> */}
           </div>
           <PhotoGallery photos={galleryPhotos} />
         </section>
@@ -66,7 +67,8 @@ export default function PhotographyPage() {
             <div className="w-12 h-12 rounded-xl bg-brand/15 dark:bg-brand/25 flex items-center justify-center text-brand shrink-0">
               <FiShoppingBag size={22} />
             </div>
-            <div>
+            {/* Coming Soon */}
+            {/* <div>
               <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
                 Interested in a print?
               </h3>
@@ -83,7 +85,7 @@ export default function PhotographyPage() {
                 <FiInstagram size={13} />
                 Follow @cmc.snaps for more
               </a>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>

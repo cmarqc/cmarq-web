@@ -1,4 +1,4 @@
-export type PhotoCategory = 'landscape' | 'portrait' | 'nature' | 'street' | 'urban' | 'all'
+﻿export type PhotoCategory = 'landscape' | 'portrait' | 'nature' | 'street' | 'urban' | 'all'
 
 export interface Photo {
   id: string
@@ -29,7 +29,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Europe',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-2',
@@ -43,7 +43,7 @@ export const photos: Photo[] = [
     category: ['portrait'],
     collection: 'Europe',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-3',
@@ -57,7 +57,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'urban'],
     collection: 'Europe',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-4',
@@ -71,7 +71,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Europe',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-5',
@@ -85,7 +85,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'street'],
     collection: 'Europe',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-6',
@@ -99,7 +99,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'urban'],
     collection: 'Europe',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-7',
@@ -113,13 +113,13 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Europe',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-8',
     src: '/photos/Europe/Europe-8.jpg',
     thumbnail: '/photos/Europe/Europe-8.jpg',
-    title: 'Sacred Shine',
+    title: 'Sacred Sunlight',
     location: 'Capri, Italy',
     width: 1200,
     height: 800,
@@ -127,7 +127,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Europe',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-9',
@@ -141,7 +141,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'urban'],
     collection: 'Europe',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Europe-10',
@@ -155,7 +155,7 @@ export const photos: Photo[] = [
     category: ['portrait', 'urban'],
     collection: 'Europe',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-1',
@@ -169,7 +169,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Peru',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-2',
@@ -183,7 +183,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Peru',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-3',
@@ -197,7 +197,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Peru',
     price: 50,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-4',
@@ -211,7 +211,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Peru',
     price: 50,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-5',
@@ -225,7 +225,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Peru',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-6',
@@ -239,7 +239,7 @@ export const photos: Photo[] = [
     category: ['nature'],
     collection: 'Peru',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-7',
@@ -253,7 +253,7 @@ export const photos: Photo[] = [
     category: ['urban'],
     collection: 'Peru',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-8',
@@ -267,7 +267,7 @@ export const photos: Photo[] = [
     category: ['nature'],
     collection: 'Peru',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Peru-9',
@@ -281,7 +281,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Peru',
     price: 45,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-1',
@@ -295,7 +295,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 45,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-2',
@@ -309,7 +309,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-3',
@@ -323,7 +323,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 45,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-4',
@@ -337,7 +337,7 @@ export const photos: Photo[] = [
     category: ['portrait', 'nature'],
     collection: 'Tulips',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-5',
@@ -351,7 +351,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-6',
@@ -365,7 +365,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-7',
@@ -379,7 +379,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 45,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-8',
@@ -393,7 +393,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-9',
@@ -407,7 +407,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-10',
@@ -421,7 +421,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 50,
-    available: true,
+    available: false,
   },
   {
     id: 'Tulips-11',
@@ -435,7 +435,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Tulips',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-1',
@@ -449,7 +449,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Bali',
     price: 50,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-2',
@@ -463,7 +463,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Bali',
     price: 45,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-3',
@@ -477,7 +477,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'street'],
     collection: 'Bali',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-4',
@@ -491,7 +491,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Bali',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-5',
@@ -505,7 +505,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Bali',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-6',
@@ -519,7 +519,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Bali',
     price: 30,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-7',
@@ -533,7 +533,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Bali',
     price: 35,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-8',
@@ -547,7 +547,7 @@ export const photos: Photo[] = [
     category: ['landscape'],
     collection: 'Bali',
     price: 40,
-    available: true,
+    available: false,
   },
   {
     id: 'Bali-9',
@@ -561,7 +561,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Bali',
     price: 35,
-    available: true,
+    available: false,
   },
 ]
 
