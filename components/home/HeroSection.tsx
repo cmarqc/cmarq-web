@@ -45,12 +45,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-zinc-900 dark:text-zinc-50 leading-tight mb-6"
           >
-            Hey, I&apos;m{' '}
-            <span className="relative inline-block">
-              Christian
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-brand rounded-full" />
-            </span>
-            .
+            Hello there!
           </motion.h1>
 
           <motion.p

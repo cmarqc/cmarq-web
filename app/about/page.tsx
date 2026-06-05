@@ -71,8 +71,7 @@ export default function AboutPage() {
                     Pacific Northwest.
                   </p>
                   <p>
-                    I currently work on the Microsoft Security Response Center (MSRC) engineering
-                    team, where I build and ship internal security tooling used across Microsoft.
+                    I currently work on the Cybersecurity Defensive Engineering (CDE) Federal team, where I build and ship internal security tooling used across Microsoft.
                     My work spans full-stack development — from React frontends to C# and .NET
                     backend services running on Azure.
                   </p>
