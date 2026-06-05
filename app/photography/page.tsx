@@ -61,14 +61,14 @@ export default function PhotographyPage() {
           <PhotoGallery photos={galleryPhotos} />
         </section>
 
+        {/* Coming Soon */}
         {/* Print info callout */}
-        <section className="mt-16 card bg-brand/5 dark:bg-brand/10 border-brand/20">
+        {/* <section className="mt-16 card bg-brand/5 dark:bg-brand/10 border-brand/20">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-brand/15 dark:bg-brand/25 flex items-center justify-center text-brand shrink-0">
               <FiShoppingBag size={22} />
             </div>
-            {/* Coming Soon */}
-            {/* <div>
+            <div>
               <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
                 Interested in a print?
               </h3>
@@ -85,9 +85,9 @@ export default function PhotographyPage() {
                 <FiInstagram size={13} />
                 Follow @cmc.snaps for more
               </a>
-            </div> */}
+            </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   )
