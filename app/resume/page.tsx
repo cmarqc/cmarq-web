@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FiDownload, FiBriefcase, FiBook, FiCode, FiGlobe, FiDatabase, FiUsers, FiHeart } from 'react-icons/fi'
 import {
@@ -104,10 +105,12 @@ export default function ResumePage() {
                         <div className="card">
                           {/* Company header */}
                           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
-                            <img
+                            <Image
                               src={group.logo}
                               alt={group.company}
-                              className="w-5 h-5 object-contain"
+                              width={20}
+                              height={20}
+                              className="object-contain"
                             />
                             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
                               {group.company}
@@ -200,7 +203,7 @@ export default function ResumePage() {
                           {/* School header */}
                           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
                             {edu.logo && (
-                              <img src={edu.logo} alt={edu.school} className="w-5 h-5 object-contain" />
+                              <Image src={edu.logo} alt={edu.school} width={20} height={20} className="object-contain" />
                             )}
                             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
                               {edu.school}
@@ -259,7 +262,7 @@ export default function ResumePage() {
                         <div className="card">
                           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
                             {org.logo && (
-                              <img src={org.logo} alt={org.name} className="w-5 h-5 object-contain" />
+                              <Image src={org.logo} alt={org.name} width={20} height={20} className="object-contain" />
                             )}
                             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
                               {org.name}
@@ -308,7 +311,7 @@ export default function ResumePage() {
                         <div className="card">
                           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
                             {group.logo && (
-                              <img src={group.logo} alt={group.company} className="w-5 h-5 object-contain" />
+                              <Image src={group.logo} alt={group.company} width={20} height={20} className="object-contain" />
                             )}
                             <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">
                               {group.company}

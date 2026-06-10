@@ -52,7 +52,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 leading-relaxed mb-10 max-w-2xl"
           >
-            "I'm just a simple man trying to make my way in the universe."
+            &ldquo;I&apos;m just a simple man trying to make my way in the universe.&rdquo;
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
