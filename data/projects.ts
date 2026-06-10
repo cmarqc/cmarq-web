@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: 'Air Cleaner Calculator',
     description:
       'My Informatics Capstone project. The Clean Air Tool is a solution to aid in achieving safe indoor air quality.',
-    tech: ['React', 'Tailwind CSS'],
+    tech: ['React', 'JavaScript'],
     category: 'data',
     featured: false,
     sourceUrl: 'https://github.com/cmarq07/air-cleaner-calculator',
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     id: 'portfolio',
     title: 'Personal Portfolio (this site)',
     description:
-      'A full redesign of my personal portfolio built from scratch using Next.js 14, Tailwind CSS, and Framer Motion. Includes a photography gallery with print purchase support.',
+      'A full redesign of my personal portfolio built from scratch using Next.js 14, Tailwind CSS, and Framer Motion. Includes a photography gallery.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     category: 'web',
     sourceUrl: 'https://github.com/cmarqc/cmarq-web',
