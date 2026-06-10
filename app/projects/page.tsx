@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiExternalLink, FiGithub, FiFilter } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiFilter, FiX } from 'react-icons/fi'
 import { projects, type Project } from '@/data/projects'
 
 type FilterCategory = 'all' | Project['category']
@@ -36,9 +36,22 @@ const itemVariants = {
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('all')
+  const [openPickerId, setOpenPickerId] = useState<string | null>(null)
 
   const filtered =
     activeFilter === 'all' ? projects : projects.filter((p) => p.category === activeFilter)
+
+  const handleCardClick = (project: Project) => {
+    const { outputUrl, sourceUrl } = project
+    if (!outputUrl && !sourceUrl) return
+    if (outputUrl && sourceUrl) {
+      setOpenPickerId(project.id)
+      return
+    }
+    window.open((outputUrl ?? sourceUrl)!, '_blank', 'noreferrer')
+  }
+
+  const isClickable = (project: Project) => !!(project.outputUrl || project.sourceUrl)
 
   return (
     <div className="page-transition py-16 lg:py-24">
@@ -70,6 +83,14 @@ export default function ProjectsPage() {
           ))}
         </div>
 
+        {/* Backdrop — closes picker when clicking outside */}
+        {openPickerId && (
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setOpenPickerId(null)}
+          />
+        )}
+
         {/* Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -84,7 +105,10 @@ export default function ProjectsPage() {
                 key={project.id}
                 variants={itemVariants}
                 layout
-                className="card card-hover flex flex-col gap-4 group"
+                onClick={() => handleCardClick(project)}
+                className={`card card-hover flex flex-col gap-4 group relative overflow-hidden${
+                  isClickable(project) ? ' cursor-pointer' : ''
+                }${openPickerId === project.id ? ' z-50' : ''}`}
               >
                 {/* Category badge */}
                 <div className="flex items-center justify-between">
@@ -118,33 +142,57 @@ export default function ProjectsPage() {
                   ))}
                 </div>
 
-                {/* Links */}
-                {(project.link || project.github) && (
-                  <div className="flex items-center gap-3 pt-3 border-t border-zinc-100 dark:border-zinc-800">
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-200"
+                {/* Link picker overlay */}
+                <AnimatePresence>
+                  {openPickerId === project.id && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute inset-0 rounded-xl bg-white/95 dark:bg-zinc-900/95 backdrop-blur-sm flex flex-col items-center justify-center gap-3 p-6"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <p className="text-xs font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-1">
+                        Open
+                      </p>
+
+                      {project.outputUrl && (
+                        <a
+                          href={project.outputUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={() => setOpenPickerId(null)}
+                          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-brand hover:text-white dark:hover:bg-brand dark:hover:text-white transition-colors duration-200"
+                        >
+                          <FiExternalLink size={14} />
+                          Live Site
+                        </a>
+                      )}
+
+                      {project.sourceUrl && (
+                        <a
+                          href={project.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          onClick={() => setOpenPickerId(null)}
+                          className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-brand hover:text-white dark:hover:bg-brand dark:hover:text-white transition-colors duration-200"
+                        >
+                          <FiGithub size={14} />
+                          Source Code
+                        </a>
+                      )}
+
+                      <button
+                        onClick={() => setOpenPickerId(null)}
+                        className="mt-1 flex items-center gap-1.5 text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors duration-200"
                       >
-                        <FiExternalLink size={14} />
-                        Live
-                      </a>
-                    )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-1.5 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-200"
-                      >
-                        <FiGithub size={14} />
-                        Source
-                      </a>
-                    )}
-                  </div>
-                )}
+                        <FiX size={12} />
+                        Cancel
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.article>
             ))}
           </AnimatePresence>

@@ -4,8 +4,8 @@ export interface Project {
   description: string
   tech: string[]
   category: 'web' | 'mobile' | 'data' | 'game' | 'other'
-  link?: string
-  github?: string
+  outputUrl?: string
+  sourceUrl?: string
   featured?: boolean
 }
 
@@ -18,6 +18,8 @@ export const projects: Project[] = [
     tech: ['React', 'JavaScript', 'CSS', 'HTML'],
     category: 'web',
     featured: true,
+    sourceUrl: 'https://github.com/cmarqc/exploreUW',
+    outputUrl: 'https://cmarqc.github.io/exploreUW/',
   },
   {
     id: 'homelessness-wa',
@@ -27,15 +29,18 @@ export const projects: Project[] = [
     tech: ['R', 'Shiny', 'ggplot2', 'Data Analysis'],
     category: 'data',
     featured: true,
+    sourceUrl: 'https://github.com/cmarq07/INFO201-CRYM',
+    outputUrl: 'https://cmarq07.github.io/INFO201-CRYM/',
   },
   {
-    id: 'co2-emissions',
-    title: 'Exploring CO₂ Emissions',
+    id: 'air-cleaner-calculator',
+    title: 'Air Cleaner Calculator',
     description:
-      'An interactive tool examining worldwide CO₂ emissions recorded since 1751, enabling users to explore historical trends and country-level comparisons.',
-    tech: ['R', 'Shiny', 'Data Visualization'],
+      'My Informatics Capstone project. The Clean Air Tool is a solution to aid in achieving safe indoor air quality.',
+    tech: ['React', 'Tailwind CSS'],
     category: 'data',
     featured: false,
+    sourceUrl: 'https://github.com/cmarq07/air-cleaner-calculator',
   },
   {
     id: 'sploosh',
@@ -45,6 +50,8 @@ export const projects: Project[] = [
     tech: ['JavaScript', 'HTML', 'CSS'],
     category: 'game',
     featured: false,
+    sourceUrl: 'https://github.com/cmarqc/Sinking-Ships',
+    outputUrl: 'https://cmarqc.github.io/Sinking-Ships/',
   },
   {
     id: 'portfolio',
@@ -53,7 +60,7 @@ export const projects: Project[] = [
       'A full redesign of my personal portfolio built from scratch using Next.js 14, Tailwind CSS, and Framer Motion. Includes a photography gallery with print purchase support.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     category: 'web',
-    github: 'https://github.com/cmarq07',
+    sourceUrl: 'https://github.com/cmarqc/cmarq-web',
     featured: true,
   },
 ]
