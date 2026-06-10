@@ -35,7 +35,7 @@ export const photos: Photo[] = [
     id: 'Europe-2',
     src: '/photos/Europe/Europe-2.jpg',
     thumbnail: '/photos/Europe/Europe-2.jpg',
-    title: 'Blue Lagoon',
+    title: 'Sky Lagoon',
     location: 'Iceland',
     width: 800,
     height: 1200,
