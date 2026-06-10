@@ -1,31 +1,44 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiChevronLeft, FiChevronRight, FiMapPin } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
+
+const AUTO_DELAY = 5000
+const MANUAL_DELAY = 8000
 
 interface PhotoCarouselProps {
   photos: Photo[]
 }
 
 export function PhotoCarousel({ photos }: PhotoCarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000, stopOnInteraction: true }),
-  ])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isManualRef = useRef(false)
+
+  const scheduleNext = useCallback(
+    (delay: number) => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+      timerRef.current = setTimeout(() => emblaApi?.scrollNext(), delay)
+    },
+    [emblaApi],
+  )
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return
     setSelectedIndex(emblaApi.selectedScrollSnap())
     setCanScrollPrev(emblaApi.canScrollPrev())
     setCanScrollNext(emblaApi.canScrollNext())
-  }, [emblaApi])
+    const delay = isManualRef.current ? MANUAL_DELAY : AUTO_DELAY
+    isManualRef.current = false
+    scheduleNext(delay)
+  }, [emblaApi, scheduleNext])
 
   useEffect(() => {
     if (!emblaApi) return
@@ -35,12 +48,27 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
     return () => {
       emblaApi.off('select', onSelect)
       emblaApi.off('reInit', onSelect)
+      if (timerRef.current) clearTimeout(timerRef.current)
     }
   }, [emblaApi, onSelect])
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi])
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi])
-  const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi])
+  const scrollPrev = useCallback(() => {
+    isManualRef.current = true
+    emblaApi?.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    isManualRef.current = true
+    emblaApi?.scrollNext()
+  }, [emblaApi])
+
+  const scrollTo = useCallback(
+    (i: number) => {
+      isManualRef.current = true
+      emblaApi?.scrollTo(i)
+    },
+    [emblaApi],
+  )
 
   const current = photos[selectedIndex]
 
