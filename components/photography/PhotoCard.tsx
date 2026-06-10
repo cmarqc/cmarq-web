@@ -23,6 +23,7 @@ export function PhotoCard({ photo, onExpand }: PhotoCardProps) {
       style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => onExpand(photo)}
     >
       <Image
         src={photo.thumbnail}
