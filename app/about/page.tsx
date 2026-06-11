@@ -13,6 +13,7 @@ const interests = [
   { emoji: '🥏', label: 'Ultimate Frisbee' },
   { emoji: '🎾', label: 'Tennis' },
   { emoji: '🥾', label: 'Hiking' },
+  { emoji: '🏂', label: 'Snowboarding' },
   { emoji: '🎨', label: 'Digital & Traditional Art' },
   { emoji: '📡', label: 'Streaming' },
 ]
