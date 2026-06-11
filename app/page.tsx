@@ -5,7 +5,7 @@ import { projects } from '@/data/projects'
 import { FiArrowRight, FiCamera, FiCode, FiMail } from 'react-icons/fi'
 
 export const metadata: Metadata = {
-  title: 'Christian Calloway — Software Engineer & Photographer',
+  title: { absolute: 'Christian Calloway — Software Engineer & Photographer' },
 }
 
 export default function HomePage() {
