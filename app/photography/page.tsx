@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { PhotoCarousel } from '@/components/photography/PhotoCarousel'
 import { PhotoGallery } from '@/components/photography/PhotoGallery'
+import { PhotoStatsProvider } from '@/components/photography/photo-stats-context'
 import { featuredPhotos, galleryPhotos } from '@/data/photos'
 import { FiCamera, FiInstagram, FiShoppingBag } from 'react-icons/fi'
 
@@ -38,28 +39,30 @@ export default function PhotographyPage() {
           </p>
         </div>
 
-        {/* Featured carousel */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold text-zinc-700 dark:text-zinc-300 mb-4">
-            Featured
-          </h2>
-          <PhotoCarousel photos={featuredPhotos} />
-        </section>
-
-        {/* Gallery */}
-        <section>
-          <div className="flex items-start justify-between mb-6 gap-4 flex-wrap">
-            <h2 className="text-xl font-semibold text-zinc-700 dark:text-zinc-300">
-              Full Gallery
+        <PhotoStatsProvider>
+          {/* Featured carousel */}
+          <section className="mb-16">
+            <h2 className="text-xl font-semibold text-zinc-700 dark:text-zinc-300 mb-4">
+              Featured
             </h2>
-            {/* Coming Soon */}
-            {/* <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-2 rounded-lg">
-              <FiShoppingBag size={14} className="text-brand" />
-              Prints available — hover a photo to purchase
-            </div> */}
-          </div>
-          <PhotoGallery photos={galleryPhotos} />
-        </section>
+            <PhotoCarousel photos={featuredPhotos} />
+          </section>
+
+          {/* Gallery */}
+          <section>
+            <div className="flex items-start justify-between mb-6 gap-4 flex-wrap">
+              <h2 className="text-xl font-semibold text-zinc-700 dark:text-zinc-300">
+                Full Gallery
+              </h2>
+              {/* Coming Soon */}
+              {/* <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-2 rounded-lg">
+                <FiShoppingBag size={14} className="text-brand" />
+                Prints available — hover a photo to purchase
+              </div> */}
+            </div>
+            <PhotoGallery photos={galleryPhotos} />
+          </section>
+        </PhotoStatsProvider>
 
         {/* Coming Soon */}
         {/* Print info callout */}

@@ -14,6 +14,12 @@ export interface Photo {
   collection: string
   price?: number
   available: boolean
+  /**
+   * Shortcode of the matching Instagram post (instagram.com/p/<shortcode>/).
+   * When set and INSTAGRAM_ACCESS_TOKEN is configured, the photo's stats
+   * include that post's Instagram likes.
+   */
+  instagram?: string
 }
 
 export const photos: Photo[] = [

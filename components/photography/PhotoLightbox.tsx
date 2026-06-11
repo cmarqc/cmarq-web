@@ -4,8 +4,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiX, FiMapPin, FiShoppingBag, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import {
+  FiX,
+  FiMapPin,
+  FiShoppingBag,
+  FiChevronLeft,
+  FiChevronRight,
+  FiEye,
+  FiHeart,
+  FiInstagram,
+} from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
+import { usePhotoStats } from './photo-stats-context'
 
 interface PhotoLightboxProps {
   photo: Photo
@@ -16,6 +26,13 @@ interface PhotoLightboxProps {
 
 export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxProps) {
   const purchaseHref = `/contact?subject=${encodeURIComponent(`Print Inquiry: ${photo.title}`)}`
+  const { available, stats, isLiked, toggleLike, recordView } = usePhotoStats()
+  const photoStats = stats[photo.id]
+  const liked = isLiked(photo.id)
+
+  useEffect(() => {
+    recordView(photo.id)
+  }, [photo.id, recordView])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -121,6 +138,40 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
                 ))}
               </div>
             </div>
+
+            {available && (
+              <div>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => toggleLike(photo.id)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                      liked
+                        ? 'bg-brand text-white'
+                        : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700'
+                    }`}
+                    aria-label={liked ? 'Unlike photo' : 'Like photo'}
+                    aria-pressed={liked}
+                  >
+                    <FiHeart size={14} className={liked ? 'fill-current' : undefined} />
+                    {photoStats?.likes ?? 0}
+                  </button>
+                  <span className="flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400">
+                    <FiEye size={14} />
+                    {photoStats?.views ?? 0} views
+                  </span>
+                </div>
+                {photoStats?.instagramLikes != null && (
+                  <a
+                    href={photoStats.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 mt-2 text-xs text-zinc-500 dark:text-zinc-400 hover:text-brand transition-colors"
+                  >
+                    <FiInstagram size={12} />+{photoStats.instagramLikes} likes on Instagram
+                  </a>
+                )}
+              </div>
+            )}
 
             {photo.available && photo.price != null && (
               <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800">

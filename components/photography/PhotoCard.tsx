@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMapPin, FiShoppingBag, FiZoomIn } from 'react-icons/fi'
+import { FiMapPin, FiShoppingBag, FiZoomIn, FiEye, FiHeart } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
+import { usePhotoStats } from './photo-stats-context'
 
 interface PhotoCardProps {
   photo: Photo
@@ -14,8 +15,12 @@ interface PhotoCardProps {
 
 export function PhotoCard({ photo, onExpand }: PhotoCardProps) {
   const [hovered, setHovered] = useState(false)
+  const { available, stats, isLiked, toggleLike } = usePhotoStats()
 
   const purchaseHref = `/contact?subject=${encodeURIComponent(`Print Inquiry: ${photo.title}`)}`
+  const photoStats = stats[photo.id]
+  const liked = isLiked(photo.id)
+  const likeCount = (photoStats?.likes ?? 0) + (photoStats?.instagramLikes ?? 0)
 
   return (
     <div
@@ -43,8 +48,26 @@ export function PhotoCard({ photo, onExpand }: PhotoCardProps) {
             transition={{ duration: 0.2 }}
             className="absolute inset-0 bg-black/55 flex flex-col justify-between p-4"
           >
-            {/* Expand button top-right */}
-            <div className="flex justify-end">
+            {/* Like + expand buttons top-right */}
+            <div className="flex justify-end gap-2">
+              {available && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    toggleLike(photo.id)
+                  }}
+                  className={`h-9 px-3 rounded-lg backdrop-blur-sm flex items-center justify-center gap-1.5 text-sm font-medium transition-colors ${
+                    liked
+                      ? 'bg-brand text-white'
+                      : 'bg-white/20 hover:bg-white/30 text-white'
+                  }`}
+                  aria-label={liked ? 'Unlike photo' : 'Like photo'}
+                  aria-pressed={liked}
+                >
+                  <FiHeart size={15} className={liked ? 'fill-current' : undefined} />
+                  {likeCount > 0 && likeCount}
+                </button>
+              )}
               <button
                 onClick={(e) => {
                   e.stopPropagation()
@@ -60,12 +83,20 @@ export function PhotoCard({ photo, onExpand }: PhotoCardProps) {
             {/* Caption bottom */}
             <div>
               <p className="text-white font-semibold text-sm leading-tight mb-1">{photo.title}</p>
-              {photo.location && (
-                <p className="flex items-center gap-1 text-white/70 text-xs mb-3">
-                  <FiMapPin size={10} />
-                  {photo.location}
-                </p>
-              )}
+              <div className="flex items-center gap-3 mb-3">
+                {photo.location && (
+                  <p className="flex items-center gap-1 text-white/70 text-xs">
+                    <FiMapPin size={10} />
+                    {photo.location}
+                  </p>
+                )}
+                {available && photoStats && photoStats.views > 0 && (
+                  <p className="flex items-center gap-1 text-white/70 text-xs">
+                    <FiEye size={10} />
+                    {photoStats.views}
+                  </p>
+                )}
+              </div>
               {photo.available && photo.price != null && (
                 <Link
                   href={purchaseHref}
