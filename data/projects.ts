@@ -18,8 +18,8 @@ export const projects: Project[] = [
     tech: ['React', 'JavaScript', 'CSS', 'HTML'],
     category: 'web',
     featured: true,
-    sourceUrl: 'https://github.com/cmarqc/exploreUW',
-    outputUrl: 'https://cmarqc.github.io/exploreUW/',
+    sourceUrl: 'https://github.com/cmarqc/explore-uw',
+    outputUrl: 'https://cmarqc.github.io/explore-uw/',
   },
   {
     id: 'homelessness-wa',
@@ -44,14 +44,14 @@ export const projects: Project[] = [
   },
   {
     id: 'sploosh',
-    title: 'Sinking Ships (Sploosh)',
+    title: 'Sploosh Kaboom',
     description:
       "A browser-based Battleship game inspired by The Legend of Zelda: Wind Waker's mini-game. Features custom pixel art assets and classic gameplay mechanics.",
     tech: ['JavaScript', 'HTML', 'CSS'],
     category: 'game',
     featured: false,
-    sourceUrl: 'https://github.com/cmarqc/Sinking-Ships',
-    outputUrl: 'https://cmarqc.github.io/Sinking-Ships/',
+    sourceUrl: 'https://github.com/cmarqc/sploosh-kaboom',
+    outputUrl: 'https://cmarqc.github.io/sploosh-kaboom/',
   },
   {
     id: 'portfolio',
