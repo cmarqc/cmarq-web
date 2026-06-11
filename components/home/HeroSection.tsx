@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiDownload } from 'react-icons/fi'
+import { FiArrowRight, FiFileText } from 'react-icons/fi'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -60,12 +60,13 @@ export function HeroSection() {
               View My Work
               <FiArrowRight size={18} />
             </Link>
-            <Link href="/resume" className="btn-secondary text-base">
-              Resume
-              <FiDownload size={18} />
+            <Link href="/photography" className="btn-secondary text-base">
+              Photography
+              <FiArrowRight size={18} />
             </Link>
-            <Link href="/photography" className="btn-ghost text-base">
-              Photography →
+            <Link href="/resume" className="btn-ghost text-base px-6 py-3">
+              Resume
+              <FiFileText size={18} />
             </Link>
           </motion.div>
         </motion.div>
