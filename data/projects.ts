@@ -40,7 +40,8 @@ export const projects: Project[] = [
     tech: ['React', 'JavaScript'],
     category: 'data',
     featured: false,
-    sourceUrl: 'https://github.com/cmarq07/air-cleaner-calculator',
+    sourceUrl: 'https://github.com/cmarqc/air-cleaner-calculator',
+    outputUrl: 'https://cmarqc.github.io/air-cleaner-calculator/',
   },
   {
     id: 'sploosh',
