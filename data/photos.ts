@@ -710,7 +710,7 @@ export const photos: Photo[] = [
     location: 'Seattle, WA',
     width: 1200,
     height: 800,
-    featured: true,
+    featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
     price: 45,
