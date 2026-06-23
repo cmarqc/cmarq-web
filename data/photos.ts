@@ -36,6 +36,7 @@ export const photos: Photo[] = [
     collection: 'Europe',
     price: 35,
     available: false,
+    instagram: 'C1Dj4PJpn8U'
   },
   {
     id: 'Europe-2',
