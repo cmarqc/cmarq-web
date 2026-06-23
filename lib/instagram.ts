@@ -40,6 +40,42 @@ function shortcodeFromPermalink(permalink: string): string | null {
   return match ? match[1] : null
 }
 
+export interface InstagramRef {
+  /** Post shortcode — the part after /p/ or /reel/ in a post URL. */
+  shortcode: string
+  /** 1-based carousel slide, from ?img_index= on a post URL, if present. */
+  imgIndex?: number
+}
+
+/**
+ * Parse a photo's `instagram` field into a shortcode plus optional carousel
+ * image index. Accepts a bare shortcode ("C1Dj4PJpn8U"), a shortcode with an
+ * index ("C1Dj4PJpn8U?img_index=2"), or a full post URL
+ * ("https://www.instagram.com/p/C1Dj4PJpn8U/?img_index=2").
+ *
+ * The index only affects the deep link to the post — Instagram reports likes
+ * and comments per post, never per carousel image, so it never changes counts.
+ */
+export function parseInstagramRef(value: string): InstagramRef | null {
+  const trimmed = value.trim()
+  if (!trimmed) return null
+  // Prefer the /p/<code>/ or /reel/<code>/ form (full URLs); otherwise take
+  // the leading token up to the first slash or query string (bare shortcode).
+  const fromUrl = trimmed.match(/\/(?:p|reel)\/([A-Za-z0-9_-]+)/)
+  const shortcode = fromUrl ? fromUrl[1] : trimmed.match(/^[A-Za-z0-9_-]+/)?.[0]
+  if (!shortcode) return null
+  const indexMatch = trimmed.match(/[?&]img_index=(\d+)/)
+  const imgIndex = indexMatch ? Number(indexMatch[1]) : undefined
+  return { shortcode, imgIndex }
+}
+
+/** Append a carousel image index to a post permalink for deep-linking. */
+export function withImgIndex(permalink: string, imgIndex: number | undefined): string {
+  if (imgIndex == null) return permalink
+  const sep = permalink.includes('?') ? '&' : '?'
+  return `${permalink}${sep}img_index=${imgIndex}`
+}
+
 export async function getInstagramStats(): Promise<InstagramStats | null> {
   const token = process.env.INSTAGRAM_ACCESS_TOKEN
   if (!token) return null

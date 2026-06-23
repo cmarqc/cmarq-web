@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { db, describeDbError, isDbConfigured, warnDbNotConfigured } from '@/lib/db'
-import { getInstagramStats } from '@/lib/instagram'
+import { getInstagramStats, parseInstagramRef, withImgIndex } from '@/lib/instagram'
 import { photos } from '@/data/photos'
 
 export const dynamic = 'force-dynamic'
@@ -30,11 +30,13 @@ export async function GET() {
     if (instagram) {
       for (const photo of photos) {
         if (!photo.instagram) continue
-        const igPost = instagram.byShortcode[photo.instagram]
+        const ref = parseInstagramRef(photo.instagram)
+        if (!ref) continue
+        const igPost = instagram.byShortcode[ref.shortcode]
         if (!igPost) continue
         const entry = (stats[photo.id] ??= { views: 0, likes: 0 })
         entry.instagramLikes = igPost.likes
-        entry.instagramUrl = igPost.permalink
+        entry.instagramUrl = withImgIndex(igPost.permalink, ref.imgIndex)
       }
     }
 

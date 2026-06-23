@@ -15,9 +15,14 @@ export interface Photo {
   price?: number
   available: boolean
   /**
-   * Shortcode of the matching Instagram post (instagram.com/p/<shortcode>/).
-   * When set and INSTAGRAM_ACCESS_TOKEN is configured, the photo's stats
-   * include that post's Instagram likes.
+   * The matching Instagram post. When set and INSTAGRAM_ACCESS_TOKEN is
+   * configured, the photo's stats include that post's Instagram likes.
+   *
+   * Accepts a bare shortcode ("C1Dj4PJpn8U"), a shortcode with a carousel
+   * image index ("C1Dj4PJpn8U?img_index=2"), or a full post URL
+   * ("https://www.instagram.com/p/C1Dj4PJpn8U/?img_index=2"). The image index
+   * only deep-links the "likes on Instagram" link to that slide — Instagram
+   * reports likes per post, not per carousel image.
    */
   instagram?: string
 }
