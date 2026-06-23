@@ -213,7 +213,7 @@ export const photos: Photo[] = [
     location: 'Machu Picchu, Peru',
     width: 1200,
     height: 800,
-    featured: true,
+    featured: false,
     category: ['landscape'],
     collection: 'Peru',
     price: 50,
