@@ -2,11 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   FiX,
   FiMapPin,
+  FiCamera,
   FiShoppingBag,
   FiChevronLeft,
   FiChevronRight,
@@ -15,6 +16,7 @@ import {
   FiInstagram,
 } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
+import { getPhotoExif } from '@/data/photo-metadata'
 import { usePhotoStats } from './photo-stats-context'
 
 interface PhotoLightboxProps {
@@ -29,6 +31,18 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
   const { available, stats, isLiked, toggleLike, recordView } = usePhotoStats()
   const photoStats = stats[photo.id]
   const liked = isLiked(photo.id)
+
+  const exif = getPhotoExif(photo.src)
+  const details: { label: string; value: string }[] = [
+    { label: 'Camera', value: exif?.camera ?? photo.camera ?? '' },
+    { label: 'Lens', value: exif?.lens ?? '' },
+    { label: 'Date', value: exif?.dateTaken ?? '' },
+    { label: 'Resolution', value: exif?.dimensions ?? '' },
+    { label: 'Focal length', value: exif?.focalLength ?? '' },
+    { label: 'Aperture', value: exif?.aperture ?? '' },
+    { label: 'Shutter', value: exif?.shutterSpeed ?? '' },
+    { label: 'ISO', value: exif?.iso != null ? String(exif.iso) : '' },
+  ].filter((d) => d.value)
 
   useEffect(() => {
     recordView(photo.id)
@@ -119,9 +133,6 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
                   {photo.location}
                 </p>
               )}
-              {photo.camera && (
-                <p className="text-sm text-zinc-400 dark:text-zinc-500 mt-1">{photo.camera}</p>
-              )}
             </div>
 
             <div className="w-8 h-0.5 bg-brand rounded-full" />
@@ -138,6 +149,25 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
                 ))}
               </div>
             </div>
+
+            {details.length > 0 && (
+              <div>
+                <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                  <FiCamera size={12} className="text-brand" />
+                  Details
+                </p>
+                <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
+                  {details.map(({ label, value }) => (
+                    <Fragment key={label}>
+                      <dt className="text-zinc-400 dark:text-zinc-500">{label}</dt>
+                      <dd className="text-right text-zinc-700 dark:text-zinc-300 break-words">
+                        {value}
+                      </dd>
+                    </Fragment>
+                  ))}
+                </dl>
+              </div>
+            )}
 
             {available && (
               <div>

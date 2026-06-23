@@ -1,0 +1,532 @@
+{
+  "/photos/Bali/Bali-1.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 28, 2025",
+    "focalLength": "18mm",
+    "aperture": "f/22",
+    "shutterSpeed": "1/100s",
+    "iso": 1600
+  },
+  "/photos/Bali/Bali-2.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 28, 2025",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 1600
+  },
+  "/photos/Bali/Bali-3.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "18mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/1250s",
+    "iso": 12800
+  },
+  "/photos/Bali/Bali-4.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "55mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/250s",
+    "iso": 12800
+  },
+  "/photos/Bali/Bali-5.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "70mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/250s",
+    "iso": 3200
+  },
+  "/photos/Bali/Bali-6.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "143mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/250s",
+    "iso": 3200
+  },
+  "/photos/Bali/Bali-7.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "55mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/250s",
+    "iso": 1600
+  },
+  "/photos/Bali/Bali-8.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "55mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/250s",
+    "iso": 1600
+  },
+  "/photos/Bali/Bali-9.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "216mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/250s",
+    "iso": 3200
+  },
+  "/photos/Europe/Europe-1.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "July 28, 2023",
+    "focalLength": "84mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/500s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-10.jpg": {
+    "dimensions": "800 × 1200",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 8, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/800s",
+    "iso": 400
+  },
+  "/photos/Europe/Europe-2.jpg": {
+    "dimensions": "800 × 1200",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 28, 2023",
+    "focalLength": "22mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/250s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-3.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 29, 2023",
+    "focalLength": "28mm",
+    "aperture": "f/20",
+    "shutterSpeed": "1/30s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-4.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 30, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/60s",
+    "iso": 12800
+  },
+  "/photos/Europe/Europe-5.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 31, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/500s",
+    "iso": 400
+  },
+  "/photos/Europe/Europe-6.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 31, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/500s",
+    "iso": 12800
+  },
+  "/photos/Europe/Europe-7.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 2, 2023",
+    "focalLength": "20mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-8.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 2, 2023",
+    "focalLength": "31mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1250s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-9.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "August 8, 2023",
+    "focalLength": "79mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/800s",
+    "iso": 200
+  },
+  "/photos/LakeWashington/Cruise-01.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "33mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-02.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "34mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-03.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "31mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-04.jpg": {
+    "dimensions": "1200 × 857",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "43mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-05.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "53mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-06.jpg": {
+    "dimensions": "1200 × 600",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-07.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-08.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-09.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "109mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-10.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "155mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-11.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "157mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-12.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "146mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/1000s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-13.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/400s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/Cruise-14.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "June 2, 2026",
+    "focalLength": "175mm",
+    "aperture": "f/9",
+    "shutterSpeed": "1/500s",
+    "iso": 100
+  },
+  "/photos/South%20America/Peru/Peru-1.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "22mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 1600
+  },
+  "/photos/South%20America/Peru/Peru-2.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/640s",
+    "iso": 200
+  },
+  "/photos/South%20America/Peru/Peru-3.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "31mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 400
+  },
+  "/photos/South%20America/Peru/Peru-4.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/640s",
+    "iso": 200
+  },
+  "/photos/South%20America/Peru/Peru-5.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/640s",
+    "iso": 200
+  },
+  "/photos/South%20America/Peru/Peru-6.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "127mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/South%20America/Peru/Peru-7.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "37mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/South%20America/Peru/Peru-8.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "29mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/South%20America/Peru/Peru-9.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "26mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 200
+  },
+  "/photos/Tulips/Tulips-1.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "43mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/Tulips/Tulips-10.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-11.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "43mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-2.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-3.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "43mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-4.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "84mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 400
+  },
+  "/photos/Tulips/Tulips-5.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "70mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/Tulips/Tulips-6.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "100mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 400
+  },
+  "/photos/Tulips/Tulips-7.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "250mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-8.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "250mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-9.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "46mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  }
+}
