@@ -5,12 +5,13 @@ import { clientKey, rateLimit } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!isDbConfigured()) {
     warnDbNotConfigured()
     return NextResponse.json({ error: 'stats_unavailable' }, { status: 503 })
   }
-  const photoId = decodeURIComponent(params.id)
+  const { id } = await params
+  const photoId = decodeURIComponent(id)
   if (!photos.some((p) => p.id === photoId)) {
     return NextResponse.json({ error: 'unknown_photo' }, { status: 404 })
   }
