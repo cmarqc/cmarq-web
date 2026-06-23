@@ -12,6 +12,15 @@ export interface PhotoStatsEntry {
   instagramUrl?: string
 }
 
+// A configured `instagram` value that yields no stats is almost always a typo'd
+// shortcode. Surface it in dev so it doesn't fail invisibly; stay quiet in
+// production where logs are noisier and the page degrades gracefully anyway.
+function warnInstagram(photoId: string, reason: string) {
+  if (process.env.NODE_ENV !== 'production') {
+    console.warn(`[stats] photo "${photoId}": ${reason}`)
+  }
+}
+
 export async function GET() {
   if (!isDbConfigured()) {
     warnDbNotConfigured()
@@ -31,9 +40,15 @@ export async function GET() {
       for (const photo of photos) {
         if (!photo.instagram) continue
         const ref = parseInstagramRef(photo.instagram)
-        if (!ref) continue
+        if (!ref) {
+          warnInstagram(photo.id, `unparseable instagram value "${photo.instagram}"`)
+          continue
+        }
         const igPost = instagram.byShortcode[ref.shortcode]
-        if (!igPost) continue
+        if (!igPost) {
+          warnInstagram(photo.id, `no Instagram post matched shortcode "${ref.shortcode}"`)
+          continue
+        }
         const entry = (stats[photo.id] ??= { views: 0, likes: 0 })
         entry.instagramLikes = igPost.likes
         entry.instagramUrl = withImgIndex(igPost.permalink, ref.imgIndex)
