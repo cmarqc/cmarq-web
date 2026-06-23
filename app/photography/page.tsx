@@ -31,9 +31,9 @@ export default function PhotographyPage() {
               href="https://www.instagram.com/cmc.snaps"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-brand hover:underline"
+              className="inline-flex items-center gap-0.5 -mx-1 px-1.5 py-0.5 rounded-md text-brand transition-colors hover:bg-brand/10 hover:text-red-400"
             >
-              <FiInstagram size={14} />
+              <FiInstagram size={14} className="shrink-0" />
               @cmc.snaps
             </a>
           </p>
@@ -83,9 +83,9 @@ export default function PhotographyPage() {
                 href="https://www.instagram.com/cmc.snaps"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-2 text-sm text-brand hover:underline"
+                className="inline-flex items-center gap-0.5 -mx-1 mt-2 px-1.5 py-0.5 rounded-md text-sm text-brand transition-colors hover:bg-brand/10 hover:text-red-400"
               >
-                <FiInstagram size={13} />
+                <FiInstagram size={13} className="shrink-0" />
                 Follow @cmc.snaps for more
               </a>
             </div>
