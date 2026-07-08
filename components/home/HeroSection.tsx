@@ -56,12 +56,12 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-            <Link href="/projects" className="btn-primary text-base">
-              View My Work
+            <Link href="/photography" className="btn-primary text-base">
+              Photography
               <FiArrowRight size={18} />
             </Link>
-            <Link href="/photography" className="btn-secondary text-base">
-              Photography
+            <Link href="/projects" className="btn-secondary text-base">
+              View My Work
               <FiArrowRight size={18} />
             </Link>
             <Link href="/resume" className="btn-ghost text-base px-6 py-3">

@@ -21,16 +21,16 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                icon: FiCode,
-                title: 'Projects',
-                desc: 'Full-stack apps, data tools, and games built end-to-end.',
-                href: '/projects',
-              },
-              {
                 icon: FiCamera,
                 title: 'Photography',
                 desc: 'Landscapes, street scenes, and nature captured across the Pacific Northwest.',
                 href: '/photography',
+              },
+              {
+                icon: FiCode,
+                title: 'Projects',
+                desc: 'Full-stack apps, data tools, and games built end-to-end.',
+                href: '/projects',
               },
               {
                 icon: FiMail,
