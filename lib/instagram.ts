@@ -35,6 +35,19 @@ const MAX_PAGES = 5 // up to ~500 most recent posts
 
 let cache: { data: InstagramStats | null; fetchedAt: number } | null = null
 
+// Instagram returns the real reason (e.g. {"error":{"message":"API access
+// blocked.","code":200}}) in the body; surface it so failures are diagnosable.
+async function graphError(label: string, res: Response): Promise<Error> {
+  let detail = ''
+  try {
+    const body = (await res.json()) as { error?: { message?: string; code?: number } }
+    if (body.error) detail = ` — ${body.error.message ?? ''} (code ${body.error.code ?? '?'})`
+  } catch {
+    // non-JSON body; status alone will have to do
+  }
+  return new Error(`${label} failed: ${res.status}${detail}`)
+}
+
 function shortcodeFromPermalink(permalink: string): string | null {
   const match = permalink.match(/\/(?:p|reel)\/([^/?]+)/)
   return match ? match[1] : null
@@ -86,7 +99,7 @@ export async function getInstagramStats(): Promise<InstagramStats | null> {
       `${GRAPH_BASE}/me?fields=username,followers_count,media_count&access_token=${token}`,
       { cache: 'no-store' },
     )
-    if (!profileRes.ok) throw new Error(`profile fetch failed: ${profileRes.status}`)
+    if (!profileRes.ok) throw await graphError('profile fetch', profileRes)
     const profile = (await profileRes.json()) as {
       username?: string
       followers_count?: number
@@ -101,7 +114,7 @@ export async function getInstagramStats(): Promise<InstagramStats | null> {
 
     for (let page = 0; url && page < MAX_PAGES; page++) {
       const res: Response = await fetch(url, { cache: 'no-store' })
-      if (!res.ok) throw new Error(`media fetch failed: ${res.status}`)
+      if (!res.ok) throw await graphError('media fetch', res)
       const body = (await res.json()) as {
         data?: InstagramMedia[]
         paging?: { next?: string }
