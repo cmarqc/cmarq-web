@@ -1,11 +1,12 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import useEmblaCarousel from 'embla-carousel-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiChevronLeft, FiChevronRight, FiMapPin } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
+import { popularityScore, usePhotoStats } from './photo-stats-context'
 
 const AUTO_DELAY = 5000
 const MANUAL_DELAY = 8000
@@ -15,8 +16,15 @@ interface PhotoCarouselProps {
 }
 
 export function PhotoCarousel({ photos }: PhotoCarouselProps) {
+  const { stats } = usePhotoStats()
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [selectedIndex, setSelectedIndex] = useState(0)
+
+  // Most popular first. Before stats load every score is 0, so the sort is a
+  // no-op and the curated data order shows through.
+  const orderedPhotos = useMemo(() => {
+    return [...photos].sort((a, b) => popularityScore(stats[b.id]) - popularityScore(stats[a.id]))
+  }, [photos, stats])
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -52,6 +60,11 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
     }
   }, [emblaApi, onSelect])
 
+  // Re-sync Embla when the popularity order changes (e.g. once stats load).
+  useEffect(() => {
+    emblaApi?.reInit()
+  }, [emblaApi, orderedPhotos])
+
   const scrollPrev = useCallback(() => {
     isManualRef.current = true
     emblaApi?.scrollPrev()
@@ -70,14 +83,14 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
     [emblaApi],
   )
 
-  const current = photos[selectedIndex]
+  const current = orderedPhotos[selectedIndex]
 
   return (
     <div className="relative group">
       {/* Carousel viewport */}
       <div className="embla rounded-2xl overflow-hidden" ref={emblaRef}>
         <div className="embla__container">
-          {photos.map((photo, i) => (
+          {orderedPhotos.map((photo, i) => (
             <div key={photo.id} className="embla__slide relative aspect-[16/9]">
               <Image
                 src={photo.src}
@@ -132,7 +145,7 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
 
       {/* Dot navigation */}
       <div className="absolute bottom-4 right-4 flex items-center gap-1.5 z-10">
-        {photos.map((_, i) => (
+        {orderedPhotos.map((_, i) => (
           <button
             key={i}
             onClick={() => scrollTo(i)}

@@ -17,6 +17,22 @@ export interface PhotoStats {
   instagramUrl?: string
 }
 
+/** Total likes across on-site hearts and the linked Instagram post. */
+export function totalLikes(stats?: PhotoStats): number {
+  if (!stats) return 0
+  return (stats.likes ?? 0) + (stats.instagramLikes ?? 0)
+}
+
+/**
+ * Combined popularity score used to rank photos. Likes are the strongest
+ * engagement signal, Instagram likes are external validation, and views are the
+ * weakest (cheapest) signal — weighted accordingly.
+ */
+export function popularityScore(stats?: PhotoStats): number {
+  if (!stats) return 0
+  return (stats.likes ?? 0) * 5 + (stats.instagramLikes ?? 0) * 2 + (stats.views ?? 0)
+}
+
 interface PhotoStatsContextValue {
   /** False until stats load; UI should hide counters when unavailable. */
   available: boolean
