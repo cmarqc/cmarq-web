@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo, useRef } from 'react'
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { PhotoCard } from './PhotoCard'
 import { PhotoLightbox } from './PhotoLightbox'
@@ -19,6 +19,21 @@ const filterCategories: { value: PhotoCategory; label: string }[] = [
   { value: 'street', label: 'Street' },
   { value: 'portrait', label: 'Portrait' },
 ]
+
+// Matches the Tailwind breakpoints used by the gallery: 1 col < sm, 2 cols < lg, 3 cols otherwise.
+function useColumnCount() {
+  const [count, setCount] = useState(3)
+  useEffect(() => {
+    const compute = () => {
+      const w = window.innerWidth
+      setCount(w >= 1024 ? 3 : w >= 640 ? 2 : 1)
+    }
+    compute()
+    window.addEventListener('resize', compute)
+    return () => window.removeEventListener('resize', compute)
+  }, [])
+  return count
+}
 
 type SortKey = 'default' | 'popular' | 'likes' | 'views'
 
@@ -69,6 +84,16 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
     // Stable sort: equal metrics keep the curated data order.
     return [...filtered].sort((a, b) => metric(b) - metric(a))
   }, [filtered, sortBy, stats])
+
+  const columnCount = useColumnCount()
+
+  // Round-robin distribute so photos read left-to-right across each row (photo 0,1,2 fill
+  // the first row) while preserving the masonry layout of uneven photo heights.
+  const columns = useMemo(() => {
+    const cols: Photo[][] = Array.from({ length: columnCount }, () => [])
+    sorted.forEach((photo, i) => cols[i % columnCount].push(photo))
+    return cols
+  }, [sorted, columnCount])
 
   const currentIndex = lightboxPhoto ? sorted.findIndex((p) => p.id === lightboxPhoto.id) : -1
 
@@ -189,11 +214,13 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
         )}
       </div>
 
-      {/* Masonry-style gallery */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-        {sorted.map((photo) => (
-          <div key={photo.id} className="break-inside-avoid">
-            <PhotoCard photo={photo} onExpand={setLightboxPhoto} />
+      {/* Masonry-style gallery — round-robin columns keep left-to-right reading order */}
+      <div className="flex gap-4 items-start">
+        {columns.map((column, colIndex) => (
+          <div key={colIndex} className="flex-1 min-w-0 space-y-4">
+            {column.map((photo) => (
+              <PhotoCard key={photo.id} photo={photo} onExpand={setLightboxPhoto} />
+            ))}
           </div>
         ))}
       </div>
