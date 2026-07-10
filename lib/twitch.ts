@@ -57,6 +57,13 @@ async function getAppToken(clientId: string, clientSecret: string): Promise<stri
  * live" and "can't tell" identically.
  */
 export async function getTwitchLive(): Promise<boolean> {
+  // Dev-only mock so the live badge can be previewed without real credentials
+  // or an actual stream. Ignored in production builds, so it's safe to leave set
+  // in a local .env. Set TWITCH_MOCK_LIVE=1 to force "live".
+  if (process.env.NODE_ENV !== 'production' && process.env.TWITCH_MOCK_LIVE === '1') {
+    return true
+  }
+
   const clientId = process.env.TWITCH_CLIENT_ID
   const clientSecret = process.env.TWITCH_CLIENT_SECRET
   if (!clientId || !clientSecret) return false
