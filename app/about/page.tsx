@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FiMapPin, FiBriefcase, FiHeart } from 'react-icons/fi'
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from 'react-icons/fa'
 
 const interests = [
   { emoji: '💻', label: 'Programming & Software Engineering' },
@@ -31,6 +31,12 @@ const socialLinks = [
     icon: FaLinkedin,
     label: 'LinkedIn',
     handle: 'in/chrcalloway',
+  },
+  {
+    href: 'https://www.twitch.tv/cmarqq',
+    icon: FaTwitch,
+    label: 'Twitch',
+    handle: '@cmarqq',
   },
 ]
 

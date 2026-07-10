@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Suspense } from 'react'
 import { ContactForm } from '@/components/contact/ContactForm'
 import { FiMail, FiGithub, FiLinkedin } from 'react-icons/fi'
-import { FaInstagram } from 'react-icons/fa'
+import { FaInstagram, FaTwitch } from 'react-icons/fa'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -33,6 +33,12 @@ const contactInfo = [
     label: 'LinkedIn',
     value: 'in/chrcalloway',
     href: 'https://www.linkedin.com/in/chrcalloway',
+  },
+  {
+    icon: FaTwitch,
+    label: 'Twitch',
+    value: '@cmarqq',
+    href: 'https://www.twitch.tv/cmarqq',
   },
 ]
 

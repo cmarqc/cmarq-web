@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiMenu, FiX } from 'react-icons/fi'
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from 'react-icons/fa'
 import { ThemeToggle } from './ThemeToggle'
 
 const navLinks = [
@@ -21,6 +21,7 @@ const socialLinks = [
   { href: 'https://github.com/cmarqc', icon: FaGithub, label: 'GitHub' },
   { href: 'https://www.instagram.com/cmarq07', icon: FaInstagram, label: 'Instagram' },
   { href: 'https://www.linkedin.com/in/chrcalloway', icon: FaLinkedin, label: 'LinkedIn' },
+  { href: 'https://www.twitch.tv/cmarqq', icon: FaTwitch, label: 'Twitch' },
 ]
 
 export function Header() {

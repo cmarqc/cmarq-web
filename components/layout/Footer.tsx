@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from 'react-icons/fa'
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -13,6 +13,7 @@ const socialLinks = [
   { href: 'https://github.com/cmarq07', icon: FaGithub, label: 'GitHub' },
   { href: 'https://www.instagram.com/cmarq07', icon: FaInstagram, label: 'Instagram' },
   { href: 'https://www.linkedin.com/in/chrcalloway', icon: FaLinkedin, label: 'LinkedIn' },
+  { href: 'https://www.twitch.tv/cmarqq', icon: FaTwitch, label: 'Twitch' },
 ]
 
 export function Footer() {
