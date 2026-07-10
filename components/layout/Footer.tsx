@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from 'react-icons/fa'
+import { LiveBadge } from './LiveBadge'
 
 const navLinks = [
   { href: '/about', label: 'About' },
@@ -61,9 +62,10 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="hover:text-brand transition-colors duration-200"
+                  className="relative hover:text-brand transition-colors duration-200"
                 >
                   <Icon size={22} />
+                  {label === 'Twitch' && <LiveBadge ringClassName="ring-brand-deeper" />}
                 </a>
               ))}
             </div>

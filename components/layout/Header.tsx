@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitch } from 'react-icons/fa'
 import { ThemeToggle } from './ThemeToggle'
+import { LiveBadge } from './LiveBadge'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -82,9 +83,10 @@ export function Header() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-brand dark:hover:text-brand hover:bg-brand/10 transition-all duration-200"
+                  className="relative w-9 h-9 flex items-center justify-center rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-brand dark:hover:text-brand hover:bg-brand/10 transition-all duration-200"
                 >
                   <Icon size={18} />
+                  {label === 'Twitch' && <LiveBadge />}
                 </a>
               ))}
               <div className="w-px h-5 bg-zinc-200 dark:bg-zinc-700 mx-1" />
@@ -139,9 +141,10 @@ export function Header() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="text-zinc-500 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-200"
+                    className="relative text-zinc-500 dark:text-zinc-400 hover:text-brand dark:hover:text-brand transition-colors duration-200"
                   >
                     <Icon size={20} />
+                    {label === 'Twitch' && <LiveBadge />}
                   </a>
                 ))}
               </div>
