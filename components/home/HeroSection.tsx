@@ -104,7 +104,10 @@ export function HeroSection() {
               Photography
               <FiArrowRight size={18} />
             </Link>
-            <Link href="/projects" className="btn-secondary text-base">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-zinc-400 dark:border-zinc-500 text-zinc-800 dark:text-zinc-100 hover:bg-brand hover:border-brand hover:text-white dark:hover:border-brand dark:hover:text-white font-semibold rounded-xl transition-all duration-200 active:scale-95 text-base"
+            >
               View My Work
               <FiArrowRight size={18} />
             </Link>
