@@ -1,8 +1,12 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiFileText } from 'react-icons/fi'
+import { galleryPhotos } from '@/data/photos'
+import { popularityScore, usePhotoStats } from '@/components/photography/photo-stats-context'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -18,10 +22,50 @@ const itemVariants = {
 }
 
 export function HeroSection() {
+  const { stats } = usePhotoStats()
+
+  // The single most popular photo, ranked the same way the gallery is. Null
+  // until stats load (or when the stats backend is unreachable), in which case
+  // the hero falls back to the plain gradient below.
+  const heroPhoto = useMemo(() => {
+    let best: (typeof galleryPhotos)[number] | null = null
+    let bestScore = 0
+    for (const photo of galleryPhotos) {
+      const score = popularityScore(stats[photo.id])
+      if (score > bestScore) {
+        bestScore = score
+        best = photo
+      }
+    }
+    return best
+  }, [stats])
+
   return (
     <section className="relative min-h-[calc(100vh-64px)] flex items-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-surface-light via-surface-light to-zinc-200 dark:from-surface-nav-dark dark:via-surface-dark dark:to-zinc-900 -z-10" />
+      {heroPhoto ? (
+        <motion.div
+          key={heroPhoto.id}
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <Image
+            src={heroPhoto.src}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          {/* Theme-aware legibility scrim — heavier under the text on the left,
+              lighter on the right so the photo stays visible. */}
+          <div className="absolute inset-0 bg-gradient-to-r from-surface-light/95 via-surface-light/75 to-surface-light/40 dark:from-surface-dark/95 dark:via-surface-dark/75 dark:to-surface-dark/40" />
+        </motion.div>
+      ) : (
+        /* Background gradient (fallback while stats load / when unavailable) */
+        <div className="absolute inset-0 bg-gradient-to-br from-surface-light via-surface-light to-zinc-200 dark:from-surface-nav-dark dark:via-surface-dark dark:to-zinc-900 -z-10" />
+      )}
 
       {/* Decorative red accent blob */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand/5 dark:bg-brand/10 rounded-full blur-3xl -z-10 pointer-events-none" />

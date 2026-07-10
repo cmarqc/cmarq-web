@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { HeroSection } from '@/components/home/HeroSection'
+import { PhotoStatsProvider } from '@/components/photography/photo-stats-context'
 import { projects } from '@/data/projects'
 import { FiArrowRight, FiCamera, FiCode, FiMail } from 'react-icons/fi'
 
@@ -13,7 +14,9 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroSection />
+      <PhotoStatsProvider>
+        <HeroSection />
+      </PhotoStatsProvider>
 
       {/* Quick links section */}
       <section className="py-20 bg-white dark:bg-surface-card-dark">
