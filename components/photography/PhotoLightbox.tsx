@@ -208,8 +208,16 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
             {storeEnabled() ? (
               <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2">
                 <p className="text-xs text-zinc-400 dark:text-zinc-500">
-                  Full-resolution download, signed in the corner — no watermark. Personal-use
-                  license.
+                  Full-resolution download, signed in the corner — no watermark.{' '}
+                  <Link
+                    href="/licensing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-2 hover:text-brand transition-colors"
+                  >
+                    Personal-use license
+                  </Link>
+                  .
                 </p>
                 <PurchaseButton
                   productId={productIdForPhoto(photo.id)}
@@ -217,6 +225,8 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
                 />
                 <Link
                   href="/licensing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-center text-xs text-zinc-500 dark:text-zinc-400 hover:text-brand transition-colors"
                 >
                   View license details

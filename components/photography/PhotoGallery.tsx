@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FiArrowDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { PhotoCard } from './PhotoCard'
 import { PhotoLightbox } from './PhotoLightbox'
@@ -357,7 +358,15 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
                   {col.name} Collection
                 </p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                  {col.count} full-resolution photos · personal-use license
+                  {col.count} full-resolution photos ·{' '}
+                  <Link
+                    href="/licensing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-2 hover:text-brand transition-colors"
+                  >
+                    personal-use license
+                  </Link>
                 </p>
                 <p className="mt-2 max-w-md text-xs leading-relaxed text-zinc-400 dark:text-zinc-500">
                   Every image in the gallery is watermarked to protect the work from theft. Your
