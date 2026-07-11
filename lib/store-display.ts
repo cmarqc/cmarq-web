@@ -44,6 +44,8 @@ export const PRICING = {
   collectionDiscount: 0.55,
   /** A collection never costs less than this. */
   collectionFloorCents: 5000,
+  /** A collection never costs more than this, however large it gets. */
+  collectionCeilingCents: 20000,
   /** Prices round to this increment for tidy figures ($5). */
   roundToCents: 500,
 } as const
@@ -62,7 +64,13 @@ export function collectionPersonalCents(name: string, count: number): number {
   const override = COLLECTION_PRICE_OVERRIDES[name]
   if (override != null) return override
   const raw = count * PRICING.photoPersonalCents * PRICING.collectionDiscount
-  return Math.max(PRICING.collectionFloorCents, roundToIncrement(raw, PRICING.roundToCents))
+  const rounded = roundToIncrement(raw, PRICING.roundToCents)
+  // Clamp between the floor (tiny collections stay worthwhile) and the ceiling
+  // (huge collections like Egypt don't balloon past a sane maximum).
+  return Math.min(
+    PRICING.collectionCeilingCents,
+    Math.max(PRICING.collectionFloorCents, rounded),
+  )
 }
 
 /** Applies the license tier to a personal-license base price. */
