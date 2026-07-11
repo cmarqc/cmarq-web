@@ -9,6 +9,7 @@ import { PhotoLightbox } from './PhotoLightbox'
 import { PurchaseButton } from './PurchaseButton'
 import { popularityScore, totalLikes, usePhotoStats } from './photo-stats-context'
 import type { Photo, PhotoCategory } from '@/data/photos'
+import { getPhotoExif } from '@/data/photo-metadata'
 import {
   collectionPersonalCents,
   formatUsd,
@@ -60,14 +61,29 @@ function buildPageList(current: number, total: number): (number | 'ellipsis')[] 
   return pages
 }
 
-type SortKey = 'default' | 'popular' | 'likes' | 'views'
+type SortKey = 'default' | 'newest' | 'oldest' | 'popular' | 'likes' | 'views'
 
-const sortOptions: { value: SortKey; label: string }[] = [
+// Sorts that rely only on static EXIF data — available even before stats load.
+const staticSortOptions: { value: SortKey; label: string }[] = [
   { value: 'default', label: 'Default' },
+  { value: 'newest', label: 'Newest captured' },
+  { value: 'oldest', label: 'Oldest captured' },
+]
+
+// Sorts driven by engagement stats — only meaningful once those have loaded.
+const statSortOptions: { value: SortKey; label: string }[] = [
   { value: 'popular', label: 'Most popular' },
   { value: 'likes', label: 'Most liked' },
   { value: 'views', label: 'Most viewed' },
 ]
+
+/** Capture timestamp (ms) parsed from EXIF `dateTaken`, or null when unknown. */
+function captureTime(photo: Photo): number | null {
+  const dateTaken = getPhotoExif(photo.src)?.dateTaken
+  if (!dateTaken) return null
+  const t = Date.parse(dateTaken)
+  return Number.isNaN(t) ? null : t
+}
 
 export function PhotoGallery({ photos }: PhotoGalleryProps) {
   const { available, stats } = usePhotoStats()
@@ -101,6 +117,20 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
 
   const sorted = useMemo(() => {
     if (sortBy === 'default') return filtered
+
+    if (sortBy === 'newest' || sortBy === 'oldest') {
+      const dir = sortBy === 'newest' ? -1 : 1
+      // Stable sort: undated photos sink to the end, same-day photos keep curated order.
+      return [...filtered].sort((a, b) => {
+        const ta = captureTime(a)
+        const tb = captureTime(b)
+        if (ta === null && tb === null) return 0
+        if (ta === null) return 1
+        if (tb === null) return -1
+        return (ta - tb) * dir
+      })
+    }
+
     const metric = (photo: Photo) => {
       const s = stats[photo.id]
       if (sortBy === 'likes') return totalLikes(s)
@@ -286,23 +316,21 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             ))}
         </div>
 
-        {/* Sort — only meaningful once engagement stats have loaded */}
-        {available && (
-          <label className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 shrink-0">
-            <span className="hidden sm:inline">Sort by</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortKey)}
-              className="rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand/40 cursor-pointer"
-            >
-              {sortOptions.map(({ value, label }) => (
-                <option key={value} value={value}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
+        {/* Sort — date sorts always work; engagement sorts appear once stats load */}
+        <label className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 shrink-0">
+          <span className="hidden sm:inline">Sort by</span>
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as SortKey)}
+            className="rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 px-3 py-1.5 text-sm font-medium text-zinc-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-brand/40 cursor-pointer"
+          >
+            {[...staticSortOptions, ...(available ? statSortOptions : [])].map(({ value, label }) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       {/* Gentle, understated pointer to the collection buy option below the gallery */}
