@@ -19,7 +19,7 @@ const interests = [
 ]
 
 const socialLinks = [
-  { href: 'https://github.com/cmarq07', icon: FaGithub, label: 'GitHub', handle: '@cmarq07' },
+  { href: 'https://github.com/cmarqc', icon: FaGithub, label: 'GitHub', handle: '@cmarqc' },
   {
     href: 'https://www.instagram.com/cmarq07',
     icon: FaInstagram,

@@ -11,7 +11,7 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { href: 'https://github.com/cmarq07', icon: FaGithub, label: 'GitHub' },
+  { href: 'https://github.com/cmarqc', icon: FaGithub, label: 'GitHub' },
   { href: 'https://www.instagram.com/cmarq07', icon: FaInstagram, label: 'Instagram' },
   { href: 'https://www.linkedin.com/in/chrcalloway', icon: FaLinkedin, label: 'LinkedIn' },
   { href: 'https://www.twitch.tv/cmarqq', icon: FaTwitch, label: 'Twitch' },

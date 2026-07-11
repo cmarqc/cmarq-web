@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: FiGithub,
     label: 'GitHub',
-    value: 'github.com/cmarq07',
-    href: 'https://github.com/cmarq07',
+    value: 'github.com/cmarqc',
+    href: 'https://github.com/cmarqc',
   },
   {
     icon: FaInstagram,
