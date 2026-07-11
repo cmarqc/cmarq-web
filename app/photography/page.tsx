@@ -23,7 +23,7 @@ export default function PhotographyPage() {
           </div>
           <div className="section-divider" />
           <p className="section-subheading max-w-2xl mb-0">
-            Capturing moments — Focused on the experience
+            📸 Capture the moments — focus on the experience
           </p>
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             Check out and follow my photography Instagram!{' '}
@@ -54,43 +54,10 @@ export default function PhotographyPage() {
               <h2 className="text-xl font-semibold text-zinc-700 dark:text-zinc-300">
                 Full Gallery
               </h2>
-              {/* Coming Soon */}
-              {/* <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-2 rounded-lg">
-                <FiShoppingBag size={14} className="text-brand" />
-                Prints available — hover a photo to purchase
-              </div> */}
             </div>
             <PhotoGallery photos={galleryPhotos} />
           </section>
         </PhotoStatsProvider>
-
-        {/* Coming Soon */}
-        {/* Print info callout */}
-        {/* <section className="mt-16 card bg-brand/5 dark:bg-brand/10 border-brand/20">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand/15 dark:bg-brand/25 flex items-center justify-center text-brand shrink-0">
-              <FiShoppingBag size={22} />
-            </div>
-            <div>
-              <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
-                Interested in a print?
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-300">
-                All photos are available as high-quality prints in a variety of sizes and finishes.
-                Reach out through the contact form for pricing, sizing options, and shipping details.
-              </p>
-              <a
-                href="https://www.instagram.com/cmc.snaps"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-0.5 -mx-1 mt-2 px-1.5 py-0.5 rounded-md text-sm text-brand transition-colors hover:bg-brand/10 hover:text-red-400"
-              >
-                <FiInstagram size={13} className="shrink-0" />
-                Follow @cmc.snaps for more
-              </a>
-            </div>
-          </div>
-        </section> */}
       </div>
     </div>
   )
