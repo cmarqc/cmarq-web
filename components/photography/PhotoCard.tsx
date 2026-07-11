@@ -1,10 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMapPin, FiShoppingBag, FiZoomIn, FiEye, FiHeart } from 'react-icons/fi'
+import { FiMapPin, FiZoomIn, FiEye, FiHeart } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
 import { usePhotoStats } from './photo-stats-context'
 
@@ -17,7 +16,6 @@ export function PhotoCard({ photo, onExpand }: PhotoCardProps) {
   const [hovered, setHovered] = useState(false)
   const { available, stats, isLiked, toggleLike } = usePhotoStats()
 
-  const purchaseHref = `/contact?subject=${encodeURIComponent(`Print Inquiry: ${photo.title}`)}`
   const photoStats = stats[photo.id]
   const liked = isLiked(photo.id)
   const likeCount = (photoStats?.likes ?? 0) + (photoStats?.instagramLikes ?? 0)
@@ -97,16 +95,6 @@ export function PhotoCard({ photo, onExpand }: PhotoCardProps) {
                   </p>
                 )}
               </div>
-              {photo.available && photo.price != null && (
-                <Link
-                  href={purchaseHref}
-                  onClick={(e) => e.stopPropagation()}
-                  className="flex items-center gap-1.5 w-full justify-center px-3 py-2 rounded-lg bg-brand hover:bg-brand-hover text-white text-xs font-semibold transition-colors duration-200"
-                >
-                  <FiShoppingBag size={12} />
-                  Purchase Print — from ${photo.price}
-                </Link>
-              )}
             </div>
           </motion.div>
         )}

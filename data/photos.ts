@@ -12,8 +12,6 @@ export interface Photo {
   featured: boolean
   category: Exclude<PhotoCategory, 'all'>[]
   collection: string
-  price?: number
-  available: boolean
   /**
    * The matching Instagram post. When set and INSTAGRAM_ACCESS_TOKEN is
    * configured, the photo's stats include that post's Instagram likes.
@@ -39,8 +37,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'nature'],
     collection: 'Europe',
-    price: 35,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=2'
   },
   {
@@ -54,8 +50,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Europe',
-    price: 40,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=3'
   },
   {
@@ -69,8 +63,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'urban'],
     collection: 'Europe',
-    price: 30,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=4'
   },
   {
@@ -84,8 +76,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'nature'],
     collection: 'Europe',
-    price: 35,
-    available: false,
   },
   {
     id: 'Europe-5',
@@ -98,8 +88,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Europe',
-    price: 40,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=6'
   },
   {
@@ -113,8 +101,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Europe',
-    price: 35,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=5'
   },
   {
@@ -128,8 +114,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Europe',
-    price: 35,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=8'
   },
   {
@@ -143,8 +127,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Europe',
-    price: 30,
-    available: false,
   },
   {
     id: 'Europe-9',
@@ -157,8 +139,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'urban'],
     collection: 'Europe',
-    price: 40,
-    available: false,
     instagram: 'C1Dj4PJpn8U/?img_index=10'
   },
   {
@@ -172,8 +152,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Europe',
-    price: 35,
-    available: false,
   },
   {
     id: 'Peru-1',
@@ -186,8 +164,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Peru',
-    price: 30,
-    available: false,
   },
   {
     id: 'Peru-2',
@@ -200,8 +176,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Peru',
-    price: 40,
-    available: false,
   },
   {
     id: 'Peru-3',
@@ -214,8 +188,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape'],
     collection: 'Peru',
-    price: 50,
-    available: false,
     instagram: 'C7r_9pryB8B/?img_index=1'
   },
   {
@@ -229,8 +201,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Peru',
-    price: 50,
-    available: false,
   },
   {
     id: 'Peru-5',
@@ -243,8 +213,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Peru',
-    price: 30,
-    available: false,
     instagram: 'C7r_9pryB8B/?img_index=7'
   },
   {
@@ -258,8 +226,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['nature'],
     collection: 'Peru',
-    price: 30,
-    available: false,
     instagram: 'C7r_9pryB8B/?img_index=8'
   },
   {
@@ -273,8 +239,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['urban'],
     collection: 'Peru',
-    price: 35,
-    available: false,
     instagram: 'C7r_9pryB8B/?img_index=3'
   },
   {
@@ -288,8 +252,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['nature'],
     collection: 'Peru',
-    price: 40,
-    available: false,
     instagram: 'C7r_9pryB8B/?img_index=2'
   },
   {
@@ -303,8 +265,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'nature'],
     collection: 'Peru',
-    price: 45,
-    available: false,
     instagram: 'C7r_9pryB8B/?img_index=5'
   },
   {
@@ -318,8 +278,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 45,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=1'
   },
   {
@@ -333,8 +291,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 40,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=2'
   },
   {
@@ -348,8 +304,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 45,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=3'
   },
   {
@@ -363,8 +317,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'nature'],
     collection: 'Tulips',
-    price: 35,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=4'
   },
   {
@@ -378,8 +330,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 40,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=5'
   },
   {
@@ -393,8 +343,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 35,
-    available: false,
   },
   {
     id: 'Tulips-7',
@@ -407,8 +355,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 45,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=6'
   },
   {
@@ -422,8 +368,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 40,
-    available: false,
   },
   {
     id: 'Tulips-9',
@@ -436,8 +380,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 35,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=7'
   },
   {
@@ -451,8 +393,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 50,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=8'
   },
   {
@@ -466,8 +406,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    price: 35,
-    available: false,
     instagram: 'C6NNzvjJp2_/?img_index=9'
   },
   {
@@ -481,8 +419,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape'],
     collection: 'Bali',
-    price: 50,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=7'
   },
   {
@@ -496,8 +432,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Bali',
-    price: 45,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=6'
   },
   {
@@ -511,8 +445,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Bali',
-    price: 30,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=4'
   },
   {
@@ -526,8 +458,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Bali',
-    price: 40,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=2'
   },
   {
@@ -541,8 +471,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Bali',
-    price: 30,
-    available: false,
   },
   {
     id: 'Bali-6',
@@ -555,8 +483,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Bali',
-    price: 30,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=1'
   },
   {
@@ -570,8 +496,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Bali',
-    price: 35,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=9'
   },
   {
@@ -585,8 +509,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Bali',
-    price: 40,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=8'
   },
   {
@@ -600,8 +522,6 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'nature'],
     collection: 'Bali',
-    price: 35,
-    available: false,
     instagram: 'DQzouvckjKQ/?img_index=3'
   },
   {
@@ -615,8 +535,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 40,
-    available: false,
   },
   {
     id: 'LakeWashington-2',
@@ -629,8 +547,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-3',
@@ -643,8 +559,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Lake Washington',
-    price: 40,
-    available: false,
   },
   {
     id: 'LakeWashington-4',
@@ -657,8 +571,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-5',
@@ -671,8 +583,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-6',
@@ -685,8 +595,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 40,
-    available: false,
   },
   {
     id: 'LakeWashington-7',
@@ -699,8 +607,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-8',
@@ -713,8 +619,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 45,
-    available: false,
   },
   {
     id: 'LakeWashington-9',
@@ -727,8 +631,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-10',
@@ -741,8 +643,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 40,
-    available: false,
   },
   {
     id: 'LakeWashington-11',
@@ -755,8 +655,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 40,
-    available: false,
   },
   {
     id: 'LakeWashington-12',
@@ -769,8 +667,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-13',
@@ -783,8 +679,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 35,
-    available: false,
   },
   {
     id: 'LakeWashington-14',
@@ -797,8 +691,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Lake Washington',
-    price: 40,
-    available: false,
   },
   {
     id: 'Egypt-1',
@@ -811,8 +703,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-2',
@@ -825,8 +715,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-3',
@@ -839,8 +727,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-4',
@@ -853,8 +739,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-5',
@@ -867,8 +751,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-6',
@@ -881,8 +763,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-7',
@@ -895,8 +775,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-8',
@@ -909,8 +787,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-9',
@@ -923,8 +799,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-10',
@@ -937,8 +811,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-11',
@@ -951,8 +823,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-12',
@@ -965,8 +835,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-13',
@@ -979,8 +847,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-14',
@@ -993,8 +859,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-15',
@@ -1007,8 +871,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-16',
@@ -1021,8 +883,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-17',
@@ -1035,8 +895,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-18',
@@ -1049,8 +907,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-19',
@@ -1063,8 +919,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-20',
@@ -1077,8 +931,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-21',
@@ -1091,8 +943,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-22',
@@ -1105,8 +955,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-23',
@@ -1119,8 +967,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-24',
@@ -1133,8 +979,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-25',
@@ -1147,8 +991,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-26',
@@ -1161,8 +1003,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-27',
@@ -1175,8 +1015,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-28',
@@ -1189,8 +1027,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-29',
@@ -1203,8 +1039,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-30',
@@ -1217,8 +1051,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-31',
@@ -1231,8 +1063,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-32',
@@ -1245,8 +1075,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-33',
@@ -1259,8 +1087,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-34',
@@ -1273,8 +1099,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-35',
@@ -1287,8 +1111,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-36',
@@ -1301,8 +1123,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-37',
@@ -1315,8 +1135,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-38',
@@ -1329,8 +1147,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-39',
@@ -1343,8 +1159,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-40',
@@ -1357,8 +1171,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-41',
@@ -1371,8 +1183,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-42',
@@ -1385,8 +1195,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-43',
@@ -1399,8 +1207,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-44',
@@ -1413,8 +1219,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-45',
@@ -1427,8 +1231,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-46',
@@ -1441,8 +1243,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-47',
@@ -1455,8 +1255,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-48',
@@ -1469,8 +1267,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-49',
@@ -1483,8 +1279,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-50',
@@ -1497,8 +1291,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-51',
@@ -1511,8 +1303,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-52',
@@ -1525,8 +1315,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-53',
@@ -1539,8 +1327,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-54',
@@ -1553,8 +1339,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-55',
@@ -1567,8 +1351,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-56',
@@ -1581,8 +1363,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-57',
@@ -1595,8 +1375,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-58',
@@ -1609,8 +1387,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-59',
@@ -1623,8 +1399,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-60',
@@ -1637,8 +1411,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-61',
@@ -1651,8 +1423,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-62',
@@ -1665,8 +1435,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-63',
@@ -1679,8 +1447,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-64',
@@ -1693,8 +1459,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-65',
@@ -1707,8 +1471,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-66',
@@ -1721,8 +1483,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-67',
@@ -1735,8 +1495,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-68',
@@ -1749,8 +1507,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-69',
@@ -1763,8 +1519,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-70',
@@ -1777,8 +1531,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-71',
@@ -1791,8 +1543,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-72',
@@ -1805,8 +1555,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-73',
@@ -1819,8 +1567,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-74',
@@ -1833,8 +1579,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-75',
@@ -1847,8 +1591,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-76',
@@ -1861,8 +1603,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-77',
@@ -1875,8 +1615,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-78',
@@ -1889,8 +1627,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-79',
@@ -1903,8 +1639,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-80',
@@ -1917,8 +1651,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-81',
@@ -1931,8 +1663,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-82',
@@ -1945,8 +1675,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-83',
@@ -1959,8 +1687,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-84',
@@ -1973,8 +1699,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-85',
@@ -1987,8 +1711,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-86',
@@ -2001,8 +1723,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-87',
@@ -2015,8 +1735,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-88',
@@ -2029,8 +1747,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-89',
@@ -2043,8 +1759,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-90',
@@ -2057,8 +1771,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-91',
@@ -2071,8 +1783,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-92',
@@ -2085,8 +1795,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-93',
@@ -2099,8 +1807,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-94',
@@ -2113,8 +1819,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-95',
@@ -2127,8 +1831,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-96',
@@ -2141,8 +1843,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-97',
@@ -2155,8 +1855,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-98',
@@ -2169,8 +1867,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-99',
@@ -2183,8 +1879,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-100',
@@ -2197,8 +1891,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-101',
@@ -2211,8 +1903,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-102',
@@ -2225,8 +1915,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-103',
@@ -2239,8 +1927,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-104',
@@ -2253,8 +1939,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-105',
@@ -2267,8 +1951,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-106',
@@ -2281,8 +1963,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
   {
     id: 'Egypt-107',
@@ -2295,8 +1975,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
-    price: 35,
-    available: false,
   },
 ]
 
