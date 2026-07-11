@@ -142,7 +142,7 @@ export default function AboutPage() {
                     <FiMapPin className="text-brand mt-0.5 shrink-0" size={16} />
                     <div>
                       <p className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                        Redmond, WA
+                        Seattle, WA
                       </p>
                       <p className="text-sm text-zinc-500 dark:text-zinc-400">
                         Pacific Northwest
