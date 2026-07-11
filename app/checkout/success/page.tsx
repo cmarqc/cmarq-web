@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FiCheckCircle, FiClock, FiArrowLeft } from 'react-icons/fi'
 import { isStripeConfigured } from '@/lib/stripe'
+import { isEmailConfigured } from '@/lib/email'
 import { fulfillCheckoutSession } from '@/lib/orders'
 import { OrderDownloads } from '@/components/photography/OrderDownloads'
 
@@ -42,13 +43,15 @@ export default async function CheckoutSuccessPage({
             <div className="section-divider" />
             <p className="text-zinc-600 dark:text-zinc-300 mb-8">
               Your payment was successful. Download your full-resolution{' '}
-              {order.items.length > 1 ? 'files' : 'file'} below. We also{' '}
-              {order.customerEmail ? (
-                <>emailed a copy of this page to <strong>{order.customerEmail}</strong> —</>
+              {order.items.length > 1 ? 'files' : 'file'} below.{' '}
+              {isEmailConfigured() && order.customerEmail ? (
+                <>
+                  We also emailed a download link to <strong>{order.customerEmail}</strong>, but
+                  it&apos;s a good idea to bookmark this page too.
+                </>
               ) : (
-                <>recommend you</>
-              )}{' '}
-              bookmark this link so you can return to your downloads.
+                <>Bookmark this page so you can return to your downloads anytime.</>
+              )}
             </p>
 
             <div className="card">

@@ -2,6 +2,7 @@ import { randomBytes } from 'crypto'
 import type { Pool, ResultSetHeader, RowDataPacket } from 'mysql2/promise'
 import { ordersDb } from '@/lib/db'
 import { stripe } from '@/lib/stripe'
+import { isEmailConfigured, sendPurchaseEmail } from '@/lib/email'
 import { getProduct, priceCents, type LicenseId, type StoreProduct } from '@/lib/photography-products'
 
 /** Downloads allowed per purchased item — forgiving enough for phone + desktop + backup. */
@@ -162,7 +163,18 @@ export async function fulfillCheckoutSession(sessionId: string): Promise<OrderWi
     conn.release()
   }
 
-  return orderBySessionId(pool, sessionId)
+  // Reached only on a fresh insert (the early-return and duplicate paths above
+  // never get here), so the buyer is emailed exactly once — retries won't
+  // re-send. Best-effort: a mail failure must not fail an otherwise-paid order.
+  const created = await orderBySessionId(pool, sessionId)
+  if (created && isEmailConfigured()) {
+    try {
+      await sendPurchaseEmail(created)
+    } catch (err) {
+      console.error(`[orders] purchase email failed for order ${created.id}:`, err)
+    }
+  }
+  return created
 }
 
 // ── Lookups ─────────────────────────────────────────────────────────────────
