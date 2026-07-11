@@ -13,6 +13,12 @@ export interface Photo {
   category: Exclude<PhotoCategory, 'all'>[]
   collection: string
   /**
+   * Optional finer grouping within a collection (e.g. "Mount Sinai" inside the
+   * "Egypt" collection). Drives the gallery's sub-collection filter row;
+   * purchasing still happens at the collection level, so this is display-only.
+   */
+  subcollection?: string
+  /**
    * The matching Instagram post. When set and INSTAGRAM_ACCESS_TOKEN is
    * configured, the photo's stats include that post's Instagram likes.
    *
@@ -703,6 +709,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Red Sea',
   },
   {
     id: 'Egypt-2',
@@ -715,6 +722,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Red Sea',
   },
   {
     id: 'Egypt-3',
@@ -727,6 +735,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Red Sea',
   },
   {
     id: 'Egypt-4',
@@ -739,6 +748,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Sharm El Sheikh',
   },
   {
     id: 'Egypt-5',
@@ -751,6 +761,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Sharm El Sheikh',
   },
   {
     id: 'Egypt-6',
@@ -763,6 +774,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-7',
@@ -775,6 +787,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-8',
@@ -787,6 +800,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-9',
@@ -799,6 +813,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-10',
@@ -811,6 +826,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-11',
@@ -823,6 +839,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-12',
@@ -835,6 +852,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-13',
@@ -847,6 +865,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-14',
@@ -859,6 +878,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'street'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-15',
@@ -871,6 +891,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'street'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-16',
@@ -883,6 +904,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-17',
@@ -895,6 +917,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-18',
@@ -907,6 +930,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-19',
@@ -919,6 +943,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Mount Sinai',
   },
   {
     id: 'Egypt-20',
@@ -931,6 +956,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-21',
@@ -943,6 +969,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-22',
@@ -955,6 +982,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-23',
@@ -967,6 +995,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-24',
@@ -979,6 +1008,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-25',
@@ -991,6 +1021,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-26',
@@ -1003,6 +1034,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-27',
@@ -1015,6 +1047,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-28',
@@ -1027,6 +1060,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'St. Catherine\'s Monastery',
   },
   {
     id: 'Egypt-29',
@@ -1039,6 +1073,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-30',
@@ -1051,6 +1086,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-31',
@@ -1063,6 +1099,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-32',
@@ -1075,6 +1112,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-33',
@@ -1087,6 +1125,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-34',
@@ -1099,6 +1138,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-35',
@@ -1111,6 +1151,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-36',
@@ -1123,6 +1164,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-37',
@@ -1135,6 +1177,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-38',
@@ -1147,6 +1190,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-39',
@@ -1159,6 +1203,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-40',
@@ -1171,6 +1216,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-41',
@@ -1183,6 +1229,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-42',
@@ -1195,6 +1242,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-43',
@@ -1207,6 +1255,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-44',
@@ -1219,6 +1268,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-45',
@@ -1231,6 +1281,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-46',
@@ -1243,6 +1294,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-47',
@@ -1255,6 +1307,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-48',
@@ -1267,6 +1320,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-49',
@@ -1279,6 +1333,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-50',
@@ -1291,6 +1346,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-51',
@@ -1303,6 +1359,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-52',
@@ -1315,6 +1372,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-53',
@@ -1327,6 +1385,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-54',
@@ -1339,6 +1398,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-55',
@@ -1351,6 +1411,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-56',
@@ -1363,6 +1424,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-57',
@@ -1375,6 +1437,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-58',
@@ -1387,6 +1450,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-59',
@@ -1399,6 +1463,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-60',
@@ -1411,6 +1476,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-61',
@@ -1423,6 +1489,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-62',
@@ -1435,6 +1502,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-63',
@@ -1447,6 +1515,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-64',
@@ -1459,6 +1528,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-65',
@@ -1471,6 +1541,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-66',
@@ -1483,6 +1554,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-67',
@@ -1495,6 +1567,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-68',
@@ -1507,6 +1580,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-69',
@@ -1519,6 +1593,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-70',
@@ -1531,6 +1606,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Heavenly Cathedral',
   },
   {
     id: 'Egypt-71',
@@ -1543,6 +1619,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Farsha Mountain Lounge',
   },
   {
     id: 'Egypt-72',
@@ -1555,6 +1632,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Farsha Mountain Lounge',
   },
   {
     id: 'Egypt-73',
@@ -1567,6 +1645,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Egypt',
+    subcollection: 'Sharm El Sheikh',
   },
   {
     id: 'Egypt-74',
@@ -1579,6 +1658,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'street'],
     collection: 'Egypt',
+    subcollection: 'Sharm El Sheikh',
   },
   {
     id: 'Egypt-75',
@@ -1591,6 +1671,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-76',
@@ -1603,6 +1684,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-77',
@@ -1615,6 +1697,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-78',
@@ -1627,6 +1710,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-79',
@@ -1639,6 +1723,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-80',
@@ -1651,6 +1736,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-81',
@@ -1663,6 +1749,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Bibliotheca Alexandrina',
   },
   {
     id: 'Egypt-82',
@@ -1675,6 +1762,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-83',
@@ -1687,6 +1775,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-84',
@@ -1699,6 +1788,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-85',
@@ -1711,6 +1801,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-86',
@@ -1723,6 +1814,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'street'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-87',
@@ -1735,6 +1827,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Citadel of Qaitbay',
   },
   {
     id: 'Egypt-88',
@@ -1747,6 +1840,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Citadel of Qaitbay',
   },
   {
     id: 'Egypt-89',
@@ -1759,6 +1853,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Citadel of Qaitbay',
   },
   {
     id: 'Egypt-90',
@@ -1771,6 +1866,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Citadel of Qaitbay',
   },
   {
     id: 'Egypt-91',
@@ -1783,6 +1879,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Citadel of Qaitbay',
   },
   {
     id: 'Egypt-92',
@@ -1795,6 +1892,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Citadel of Qaitbay',
   },
   {
     id: 'Egypt-93',
@@ -1807,6 +1905,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-94',
@@ -1819,6 +1918,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-95',
@@ -1831,6 +1931,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-96',
@@ -1843,6 +1944,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Alexandria',
   },
   {
     id: 'Egypt-97',
@@ -1855,6 +1957,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-98',
@@ -1867,6 +1970,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-99',
@@ -1879,6 +1983,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-100',
@@ -1891,6 +1996,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-101',
@@ -1903,6 +2009,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-102',
@@ -1915,6 +2022,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-103',
@@ -1927,6 +2035,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-104',
@@ -1939,6 +2048,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-105',
@@ -1951,6 +2061,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['portrait', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-106',
@@ -1963,6 +2074,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
   {
     id: 'Egypt-107',
@@ -1975,6 +2087,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'urban'],
     collection: 'Egypt',
+    subcollection: 'Giza & the Pyramids',
   },
 ]
 

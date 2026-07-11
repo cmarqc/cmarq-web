@@ -89,6 +89,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
   const { available, stats } = usePhotoStats()
   const [activeFilter, setActiveFilter] = useState<PhotoCategory>('all')
   const [activeCollection, setActiveCollection] = useState<string>('all')
+  const [activeSubcollection, setActiveSubcollection] = useState<string>('all')
   const [sortBy, setSortBy] = useState<SortKey>('default')
   const [page, setPage] = useState(1)
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
@@ -105,8 +106,25 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
     return Array.from(seen.entries()).map(([name, { cover, count }]) => ({ name, cover, count }))
   }, [photos])
 
-  const collectionFiltered =
-    activeCollection === 'all' ? photos : photos.filter((p) => p.collection === activeCollection)
+  // Sub-collections available within the active collection, in first-seen order.
+  // Empty when "All" is selected or the collection has no sub-grouped photos.
+  const subcollections = useMemo(() => {
+    if (activeCollection === 'all') return []
+    const seen = new Map<string, number>()
+    for (const photo of photos) {
+      if (photo.collection !== activeCollection || !photo.subcollection) continue
+      seen.set(photo.subcollection, (seen.get(photo.subcollection) ?? 0) + 1)
+    }
+    return Array.from(seen.entries()).map(([name, count]) => ({ name, count }))
+  }, [photos, activeCollection])
+
+  const collectionFiltered = useMemo(() => {
+    const inCollection =
+      activeCollection === 'all' ? photos : photos.filter((p) => p.collection === activeCollection)
+    return activeSubcollection === 'all'
+      ? inCollection
+      : inCollection.filter((p) => p.subcollection === activeSubcollection)
+  }, [photos, activeCollection, activeSubcollection])
 
   const filtered =
     activeFilter === 'all'
@@ -146,7 +164,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
   // Reset to the first page whenever the result set changes underneath us.
   useEffect(() => {
     setPage(1)
-  }, [activeFilter, activeCollection, sortBy])
+  }, [activeFilter, activeCollection, activeSubcollection, sortBy])
 
   const pageCount = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE))
   // Clamp in case the active page fell out of range after filtering.
@@ -228,10 +246,16 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
 
   const selectCollection = (name: string) => {
     setActiveCollection(name)
+    setActiveSubcollection('all')
     setActiveFilter('all')
     setTimeout(() => {
       galleryRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     }, 50)
+  }
+
+  const selectSubcollection = (name: string) => {
+    setActiveSubcollection(name)
+    setActiveFilter('all')
   }
 
   return (
@@ -286,6 +310,41 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
           ))}
         </div>
       </div>
+
+      {/* Sub-collections — only shown when the active collection has sub-groups */}
+      {subcollections.length > 0 && (
+        <div className="mb-8">
+          <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-3">
+            {activeCollection} · Sub-collections
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => selectSubcollection('all')}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeSubcollection === 'all'
+                  ? 'bg-brand text-white shadow-sm shadow-brand/30'
+                  : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700'
+              }`}
+            >
+              All {activeCollection}
+            </button>
+            {subcollections.map((sub) => (
+              <button
+                key={sub.name}
+                onClick={() => selectSubcollection(sub.name)}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                  activeSubcollection === sub.name
+                    ? 'bg-brand text-white shadow-sm shadow-brand/30'
+                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700'
+                }`}
+              >
+                {sub.name}
+                <span className="ml-1.5 opacity-60">{sub.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Category filters + sort */}
       <div
