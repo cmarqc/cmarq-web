@@ -4,8 +4,15 @@ import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { PhotoCard } from './PhotoCard'
 import { PhotoLightbox } from './PhotoLightbox'
+import { PurchaseButton } from './PurchaseButton'
 import { popularityScore, totalLikes, usePhotoStats } from './photo-stats-context'
 import type { Photo, PhotoCategory } from '@/data/photos'
+import {
+  collectionPersonalCents,
+  formatUsd,
+  productIdForCollection,
+  storeEnabled,
+} from '@/lib/store-display'
 
 interface PhotoGalleryProps {
   photos: Photo[]
@@ -213,6 +220,34 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
           </label>
         )}
       </div>
+
+      {/* Collection purchase bar — only for a selected collection, once the store is live */}
+      {storeEnabled() &&
+        activeCollection !== 'all' &&
+        (() => {
+          const col = collections.find((c) => c.name === activeCollection)
+          if (!col) return null
+          const price = collectionPersonalCents(col.name, col.count)
+          return (
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-brand/20 bg-brand/5 dark:bg-brand/10 p-4">
+              <div>
+                <p className="font-semibold text-zinc-900 dark:text-zinc-100">
+                  {col.name} Collection
+                </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                  {col.count} full-resolution photos · personal-use license
+                </p>
+              </div>
+              <div className="sm:w-60">
+                <PurchaseButton
+                  productId={productIdForCollection(col.name)}
+                  priceCents={price}
+                  label={`Purchase collection — ${formatUsd(price)}`}
+                />
+              </div>
+            </div>
+          )
+        })()}
 
       {/* Masonry-style gallery — round-robin columns keep left-to-right reading order */}
       <div className="flex gap-4 items-start">

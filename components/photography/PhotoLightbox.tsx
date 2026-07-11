@@ -17,6 +17,8 @@ import {
 } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
 import { getPhotoExif } from '@/data/photo-metadata'
+import { PRICING, productIdForPhoto, storeEnabled } from '@/lib/store-display'
+import { PurchaseButton } from './PurchaseButton'
 import { usePhotoStats } from './photo-stats-context'
 
 interface PhotoLightboxProps {
@@ -203,20 +205,39 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
               </div>
             )}
 
-            {photo.available && photo.price != null && (
-              <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                <p className="text-xs text-zinc-400 dark:text-zinc-500 mb-3">
-                  Available as a print. Prices start from ${photo.price}. Contact me for size and
-                  finish options.
+            {storeEnabled() ? (
+              <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2">
+                <p className="text-xs text-zinc-400 dark:text-zinc-500">
+                  Available as a high-resolution digital download. Personal-use license.
                 </p>
+                <PurchaseButton
+                  productId={productIdForPhoto(photo.id)}
+                  priceCents={PRICING.photoPersonalCents}
+                />
                 <Link
-                  href={purchaseHref}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-hover text-white text-sm font-semibold transition-colors duration-200"
+                  href="/licensing"
+                  className="block text-center text-xs text-zinc-500 dark:text-zinc-400 hover:text-brand transition-colors"
                 >
-                  <FiShoppingBag size={15} />
-                  Inquire About a Print
+                  View license details
                 </Link>
               </div>
+            ) : (
+              photo.available &&
+              photo.price != null && (
+                <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                  <p className="text-xs text-zinc-400 dark:text-zinc-500 mb-3">
+                    Available as a print. Prices start from ${photo.price}. Contact me for size and
+                    finish options.
+                  </p>
+                  <Link
+                    href={purchaseHref}
+                    className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-brand hover:bg-brand-hover text-white text-sm font-semibold transition-colors duration-200"
+                  >
+                    <FiShoppingBag size={15} />
+                    Inquire About a Print
+                  </Link>
+                </div>
+              )
             )}
           </div>
         </motion.div>
