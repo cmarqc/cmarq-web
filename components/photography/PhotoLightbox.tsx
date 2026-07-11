@@ -208,7 +208,8 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
             {storeEnabled() ? (
               <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2">
                 <p className="text-xs text-zinc-400 dark:text-zinc-500">
-                  Available as a high-resolution digital download. Personal-use license.
+                  Full-resolution download, signed in the corner — no watermark. Personal-use
+                  license.
                 </p>
                 <PurchaseButton
                   productId={productIdForPhoto(photo.id)}
