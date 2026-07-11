@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { FiArrowDown } from 'react-icons/fi'
+import { FiArrowDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { PhotoCard } from './PhotoCard'
 import { PhotoLightbox } from './PhotoLightbox'
 import { PurchaseButton } from './PurchaseButton'
@@ -43,6 +43,22 @@ function useColumnCount() {
   return count
 }
 
+// Photos per page in the full gallery. Divides evenly across the 1/2/3-column layouts.
+const PAGE_SIZE = 12
+
+// Compact page list with ellipses: always the first, last, and current ±1 pages.
+function buildPageList(current: number, total: number): (number | 'ellipsis')[] {
+  const pages: (number | 'ellipsis')[] = []
+  for (let i = 1; i <= total; i++) {
+    if (i === 1 || i === total || (i >= current - 1 && i <= current + 1)) {
+      pages.push(i)
+    } else if (pages[pages.length - 1] !== 'ellipsis') {
+      pages.push('ellipsis')
+    }
+  }
+  return pages
+}
+
 type SortKey = 'default' | 'popular' | 'likes' | 'views'
 
 const sortOptions: { value: SortKey; label: string }[] = [
@@ -57,6 +73,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
   const [activeFilter, setActiveFilter] = useState<PhotoCategory>('all')
   const [activeCollection, setActiveCollection] = useState<string>('all')
   const [sortBy, setSortBy] = useState<SortKey>('default')
+  const [page, setPage] = useState(1)
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
 
@@ -95,13 +112,78 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
 
   const columnCount = useColumnCount()
 
+  // Reset to the first page whenever the result set changes underneath us.
+  useEffect(() => {
+    setPage(1)
+  }, [activeFilter, activeCollection, sortBy])
+
+  const pageCount = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE))
+  // Clamp in case the active page fell out of range after filtering.
+  const currentPage = Math.min(page, pageCount)
+  const paginated = useMemo(
+    () => sorted.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [sorted, currentPage],
+  )
+
   // Round-robin distribute so photos read left-to-right across each row (photo 0,1,2 fill
   // the first row) while preserving the masonry layout of uneven photo heights.
   const columns = useMemo(() => {
     const cols: Photo[][] = Array.from({ length: columnCount }, () => [])
-    sorted.forEach((photo, i) => cols[i % columnCount].push(photo))
+    paginated.forEach((photo, i) => cols[i % columnCount].push(photo))
     return cols
-  }, [sorted, columnCount])
+  }, [paginated, columnCount])
+
+  const goToPage = (p: number) => {
+    setPage(p)
+    galleryRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  const renderPageNav = () => (
+    <nav className="flex items-center gap-1.5" aria-label="Gallery pagination">
+      <button
+        onClick={() => goToPage(currentPage - 1)}
+        disabled={currentPage === 1}
+        aria-label="Previous page"
+        className="flex items-center justify-center w-9 h-9 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+      >
+        <FiChevronLeft size={18} />
+      </button>
+
+      {buildPageList(currentPage, pageCount).map((p, i) =>
+        p === 'ellipsis' ? (
+          <span
+            key={`ellipsis-${i}`}
+            className="w-9 h-9 flex items-center justify-center text-zinc-400 dark:text-zinc-500 select-none"
+          >
+            …
+          </span>
+        ) : (
+          <button
+            key={p}
+            onClick={() => goToPage(p)}
+            aria-label={`Page ${p}`}
+            aria-current={p === currentPage ? 'page' : undefined}
+            className={`w-9 h-9 rounded-full text-sm font-medium transition-colors ${
+              p === currentPage
+                ? 'bg-brand text-white shadow-sm shadow-brand/30'
+                : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+            }`}
+          >
+            {p}
+          </button>
+        ),
+      )}
+
+      <button
+        onClick={() => goToPage(currentPage + 1)}
+        disabled={currentPage === pageCount}
+        aria-label="Next page"
+        className="flex items-center justify-center w-9 h-9 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+      >
+        <FiChevronRight size={18} />
+      </button>
+    </nav>
+  )
 
   const currentIndex = lightboxPhoto ? sorted.findIndex((p) => p.id === lightboxPhoto.id) : -1
 
@@ -230,6 +312,9 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
         </p>
       )}
 
+      {/* Top pagination — mirrors the bottom controls so long galleries are navigable without scrolling */}
+      {pageCount > 1 && <div className="mb-8 flex justify-center">{renderPageNav()}</div>}
+
       {/* Masonry-style gallery — round-robin columns keep left-to-right reading order */}
       <div className="flex gap-4 items-start">
         {columns.map((column, colIndex) => (
@@ -244,6 +329,17 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
       {sorted.length === 0 && (
         <div className="text-center py-20 text-zinc-400 dark:text-zinc-500">
           No photos in this category yet.
+        </div>
+      )}
+
+      {/* Bottom pagination — only when the gallery spills past a single page */}
+      {pageCount > 1 && (
+        <div className="mt-12 flex flex-col items-center gap-3">
+          {renderPageNav()}
+          <p className="text-xs text-zinc-400 dark:text-zinc-500">
+            Showing {(currentPage - 1) * PAGE_SIZE + 1}–
+            {Math.min(currentPage * PAGE_SIZE, sorted.length)} of {sorted.length} photos
+          </p>
         </div>
       )}
 
