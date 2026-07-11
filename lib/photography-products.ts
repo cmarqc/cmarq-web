@@ -52,7 +52,7 @@ function originalKeyForPhoto(photo: Photo): string {
 /**
  * R2 key of a collection's downloadable ZIP. Derived from the collection's cover
  * photo folder (the name doesn't map to the folder — "Lake Washington" lives in
- * `LakeWashington`, "Peru" in `South America/Peru`), so the ZIP sits alongside
+ * `LakeWashington`, "Peru" in `SouthAmerica/Peru`), so the ZIP sits alongside
  * that collection's originals, e.g. `photos/Bali/bali.zip`.
  */
 function collectionZipKey(name: string, cover: Photo): string {

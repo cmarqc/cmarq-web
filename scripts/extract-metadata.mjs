@@ -35,7 +35,7 @@ async function collectJpegs(dir) {
 /** Build the public `src` path (matching data/photos.ts) from an absolute file path. */
 function toSrc(absPath) {
   const rel = path.relative(path.join(projectRoot, 'public'), absPath)
-  // Use POSIX separators and encode spaces (e.g. "South America") as %20.
+  // Use POSIX separators and percent-encode any unsafe characters (e.g. spaces as %20).
   return '/' + encodeURI(rel.split(path.sep).join('/'))
 }
 
