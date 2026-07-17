@@ -1,8 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   FiX,
@@ -13,11 +12,14 @@ import {
   FiEye,
   FiHeart,
   FiInstagram,
+  FiZoomIn,
 } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
 import { getPhotoExif } from '@/data/photo-metadata'
 import { PRICING, productIdForPhoto, storeEnabled } from '@/lib/store-display'
 import { PurchaseButton } from './PurchaseButton'
+import { PreviewImage } from './PreviewImage'
+import { PhotoZoomViewer } from './PhotoZoomViewer'
 import { usePhotoStats } from './photo-stats-context'
 
 interface PhotoLightboxProps {
@@ -31,6 +33,12 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
   const { available, stats, isLiked, toggleLike, recordView } = usePhotoStats()
   const photoStats = stats[photo.id]
   const liked = isLiked(photo.id)
+  const [zoomOpen, setZoomOpen] = useState(false)
+
+  // Close the zoom view when navigating to a different photo.
+  useEffect(() => {
+    setZoomOpen(false)
+  }, [photo.id])
 
   const exif = getPhotoExif(photo.src)
   const details: { label: string; value: string }[] = [
@@ -50,6 +58,8 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
+      // While the zoom view is open it owns the keyboard (Escape closes it).
+      if (zoomOpen) return
       if (e.key === 'Escape') onClose()
       if (e.key === 'ArrowLeft' && onPrev) onPrev()
       if (e.key === 'ArrowRight' && onNext) onNext()
@@ -60,7 +70,7 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
-  }, [onClose, onPrev, onNext])
+  }, [onClose, onPrev, onNext, zoomOpen])
 
   return (
     <AnimatePresence>
@@ -111,17 +121,23 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
           className="relative max-w-5xl w-full flex flex-col lg:flex-row gap-0 rounded-2xl overflow-hidden shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Photo */}
-          <div className="relative flex-1 bg-black" style={{ minHeight: '60vmin' }}>
-            <Image
-              src={photo.src}
-              alt={photo.title}
-              fill
-              className="object-contain"
-              sizes="(max-width: 1024px) 100vw, 75vw"
-              priority
+          {/* Photo — watermarked preview; click to open the zoom/pan view */}
+          <button
+            type="button"
+            onClick={() => setZoomOpen(true)}
+            className="group relative flex-1 bg-black cursor-zoom-in"
+            style={{ minHeight: '60vmin' }}
+            aria-label="Open full-screen zoom view"
+          >
+            <PreviewImage
+              photo={photo}
+              className="absolute inset-0 h-full w-full object-contain select-none"
             />
-          </div>
+            <span className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1.5 text-xs text-white/90 opacity-0 transition-opacity group-hover:opacity-100">
+              <FiZoomIn size={13} />
+              Click to zoom
+            </span>
+          </button>
 
           {/* Info panel */}
           <div className="w-full lg:w-64 shrink-0 bg-white dark:bg-zinc-900 p-6 flex flex-col gap-4">
@@ -234,6 +250,8 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
           </div>
         </motion.div>
       </motion.div>
+
+      {zoomOpen && <PhotoZoomViewer photo={photo} onClose={() => setZoomOpen(false)} />}
     </AnimatePresence>
   )
 }

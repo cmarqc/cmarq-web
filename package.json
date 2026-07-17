@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "node server.js",
     "lint": "eslint .",
-    "photos:metadata": "node scripts/extract-metadata.mjs"
+    "photos:metadata": "node scripts/extract-metadata.mjs",
+    "photos:previews": "node --env-file=.env scripts/generate-previews.mjs"
   },
   "overrides": {
     "postcss": "^8.5.10"
@@ -25,6 +26,7 @@
     "react-dom": "^19.2.7",
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
+    "react-zoom-pan-pinch": "^4.0.3",
     "resend": "^6.17.2",
     "sharp": "^0.35.1",
     "stripe": "^22.3.1"

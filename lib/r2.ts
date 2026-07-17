@@ -40,6 +40,13 @@ function bucket(): string {
   return b
 }
 
+// Watermarked previews live in the same bucket as the originals by default (under
+// a "previews/" prefix), so no separate public bucket is needed. Set
+// R2_PREVIEW_BUCKET only if you deliberately split them into their own bucket.
+function previewBucket(): string {
+  return process.env.R2_PREVIEW_BUCKET || bucket()
+}
+
 function ttlSeconds(): number {
   const minutes = Number(process.env.R2_URL_TTL_MINUTES ?? 15)
   return Math.max(60, Number.isFinite(minutes) ? minutes * 60 : 900)
@@ -60,6 +67,17 @@ export async function presignDownloadUrl(
       ? { ResponseContentDisposition: `attachment; filename="${downloadName.replace(/"/g, '')}"` }
       : {}),
   })
+  return getSignedUrl(r2(), command, { expiresIn: ttlSeconds() })
+}
+
+/**
+ * Presigned, time-limited GET URL for a watermarked preview object (inline, no
+ * attachment disposition). Safe to hand to anyone browsing the gallery — the
+ * bytes are watermarked and the URL expires. The private originals under
+ * `photos/` are never presigned here.
+ */
+export async function presignPreviewUrl(objectKey: string): Promise<string> {
+  const command = new GetObjectCommand({ Bucket: previewBucket(), Key: objectKey })
   return getSignedUrl(r2(), command, { expiresIn: ttlSeconds() })
 }
 
