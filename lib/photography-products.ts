@@ -80,7 +80,9 @@ const photoProducts: StoreProduct[] = photos.map((photo) => ({
   subtitle: photo.location,
   previewSrc: photo.src,
   objectKey: originalKeyForPhoto(photo),
-  personalCents: PRICING.photoPersonalCents,
+  personalCents: photo.featured
+    ? PRICING.featuredPhotoPersonalCents
+    : PRICING.photoPersonalCents,
 }))
 
 const collectionProducts: StoreProduct[] = (() => {

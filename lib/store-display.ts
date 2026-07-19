@@ -37,7 +37,9 @@ export const LICENSES: Record<LicenseId, License> = {
  */
 export const PRICING = {
   /** Personal-license price for a single full-resolution photo. */
-  photoPersonalCents: 1500,
+  photoPersonalCents: 2000,
+  /** Personal-license price for a single featured photo (premium tier). */
+  featuredPhotoPersonalCents: 3500,
   /** Commercial price = personal price × this (used only when commercial is enabled). */
   commercialMultiplier: 6,
   /** A collection costs (per-photo × count × this), so it's cheaper than buying each. */
