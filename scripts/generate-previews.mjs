@@ -36,9 +36,13 @@ import {
 // leaked preview isn't a print-ready file. Set to 0 for true full resolution.
 const MAX_EDGE = 2560
 const JPEG_QUALITY = 82
-const WATERMARK_TEXT = '© Christian Calloway · christiancalloway.com'
-const WATERMARK_OPACITY = 0.28 // 0–1; higher = more visible / more protective
+const WATERMARK_TEXT = 'Christian Marquis Calloway'
+const WATERMARK_OPACITY = 0.3 // 0–1; higher = more visible / more protective
 const WATERMARK_ANGLE = -30 // degrees; diagonal tiling resists cropping
+// Bold sans-serif to match a clean stock-photo watermark. Note: the generic
+// "sans-serif" / "Helvetica" resolve to a serif face through libvips' font
+// fallback on some systems, so name a real sans face (Arial) first.
+const WATERMARK_FONT = 'Arial, Verdana, sans-serif'
 // Previews are content-addressed by path; a modest cache keeps early watermark
 // tweaks from being stuck behind a year-long immutable cache.
 const CACHE_CONTROL = 'public, max-age=86400'
@@ -132,18 +136,25 @@ function xmlEscape(s) {
   )
 }
 
-/** A full-image tiled, diagonal, semi-transparent watermark as an SVG buffer. */
+/** A full-image tiled, diagonal, semi-transparent watermark as an SVG buffer.
+ *  Two staggered rows per tile give a dense, repeating grid rather than a few
+ *  sparse diagonal lines — closer to a classic stock-photo watermark. */
 function watermarkSvg(width, height) {
   const text = xmlEscape(WATERMARK_TEXT)
-  const fontSize = Math.max(16, Math.round(width / 32))
-  // Roughly size each tile to the text plus generous spacing between repeats.
-  const tileW = Math.round(WATERMARK_TEXT.length * fontSize * 0.62 + fontSize * 4)
-  const tileH = Math.round(fontSize * 6)
+  const font = xmlEscape(WATERMARK_FONT)
+  const fontSize = Math.max(18, Math.round(width / 22))
+  // Approx rendered text width, plus a gap roughly a third of the text length.
+  const textW = WATERMARK_TEXT.length * fontSize * 0.58
+  const tileW = Math.round(textW * 1.35)
+  const rowH = Math.round(fontSize * 2.4)
+  const tileH = rowH * 2 // two rows, second offset by half a tile (brick grid)
   return Buffer.from(
     `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <pattern id="wm" width="${tileW}" height="${tileH}" patternUnits="userSpaceOnUse" patternTransform="rotate(${WATERMARK_ANGLE})">
-      <text x="0" y="${Math.round(tileH / 2)}" font-family="sans-serif" font-size="${fontSize}" font-weight="600" fill="#ffffff" fill-opacity="${WATERMARK_OPACITY}">${text}</text>
+      <text x="0" y="${Math.round(rowH * 0.7)}" font-family="${font}" font-size="${fontSize}" font-weight="700" fill="#ffffff" fill-opacity="${WATERMARK_OPACITY}">${text}</text>
+      <text x="${Math.round(tileW / 2)}" y="${Math.round(rowH * 1.7)}" font-family="${font}" font-size="${fontSize}" font-weight="700" fill="#ffffff" fill-opacity="${WATERMARK_OPACITY}">${text}</text>
+      <text x="${-Math.round(tileW / 2)}" y="${Math.round(rowH * 1.7)}" font-family="${font}" font-size="${fontSize}" font-weight="700" fill="#ffffff" fill-opacity="${WATERMARK_OPACITY}">${text}</text>
     </pattern>
   </defs>
   <rect width="100%" height="100%" fill="url(#wm)"/>
