@@ -52,7 +52,10 @@ export function PhotoZoomViewer({ photo, onClose }: PhotoZoomViewerProps) {
         minScale={1}
         maxScale={6}
         doubleClick={{ mode: 'zoomIn', step: 0.9 }}
-        wheel={{ step: 0.15 }}
+        // In smooth mode the zoom per wheel event is step × |deltaY|, and a mouse
+        // notch reports |deltaY| ≈ 100 — so keep step small (a hair below the
+        // library's 0.015 default) or a single scroll rockets straight to maxScale.
+        wheel={{ step: 0.004 }}
         centerOnInit
       >
         {({ zoomIn, zoomOut, resetTransform }) => (
