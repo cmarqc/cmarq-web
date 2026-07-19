@@ -6,6 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiChevronLeft, FiChevronRight, FiMapPin } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
+import { PhotoLightbox } from './PhotoLightbox'
 import { popularityScore, usePhotoStats } from './photo-stats-context'
 
 const AUTO_DELAY = 5000
@@ -19,6 +20,7 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
   const { stats } = usePhotoStats()
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
 
   // Most popular first. Before stats load every score is 0, so the sort is a
   // no-op and the curated data order shows through.
@@ -29,11 +31,15 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
   const [canScrollNext, setCanScrollNext] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isManualRef = useRef(false)
+  const lightboxOpenRef = useRef(false)
 
   const scheduleNext = useCallback(
     (delay: number) => {
       if (timerRef.current) clearTimeout(timerRef.current)
-      timerRef.current = setTimeout(() => emblaApi?.scrollNext(), delay)
+      timerRef.current = setTimeout(() => {
+        // Don't rotate the background while the lightbox is open.
+        if (!lightboxOpenRef.current) emblaApi?.scrollNext()
+      }, delay)
     },
     [emblaApi],
   )
@@ -83,6 +89,33 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
     [emblaApi],
   )
 
+  const openLightbox = useCallback((photo: Photo) => {
+    lightboxOpenRef.current = true
+    setLightboxPhoto(photo)
+  }, [])
+
+  const closeLightbox = useCallback(() => {
+    lightboxOpenRef.current = false
+    setLightboxPhoto(null)
+    scheduleNext(MANUAL_DELAY)
+  }, [scheduleNext])
+
+  // Step through the featured set from the lightbox, keeping the carousel in sync.
+  const lightboxStep = useCallback(
+    (dir: 1 | -1) => {
+      setLightboxPhoto((prev) => {
+        if (!prev) return prev
+        const i = orderedPhotos.findIndex((p) => p.id === prev.id)
+        if (i === -1) return prev
+        const next = (i + dir + orderedPhotos.length) % orderedPhotos.length
+        isManualRef.current = true
+        emblaApi?.scrollTo(next)
+        return orderedPhotos[next]
+      })
+    },
+    [orderedPhotos, emblaApi],
+  )
+
   const current = orderedPhotos[selectedIndex]
 
   return (
@@ -102,6 +135,13 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
               />
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              {/* Click to open the lightbox (Embla suppresses clicks that follow a drag) */}
+              <button
+                type="button"
+                onClick={() => openLightbox(photo)}
+                className="absolute inset-0 cursor-zoom-in"
+                aria-label={`View ${photo.title}`}
+              />
             </div>
           ))}
         </div>
@@ -158,6 +198,16 @@ export function PhotoCarousel({ photos }: PhotoCarouselProps) {
           />
         ))}
       </div>
+
+      {/* Lightbox */}
+      {lightboxPhoto && (
+        <PhotoLightbox
+          photo={lightboxPhoto}
+          onClose={closeLightbox}
+          onPrev={orderedPhotos.length > 1 ? () => lightboxStep(-1) : undefined}
+          onNext={orderedPhotos.length > 1 ? () => lightboxStep(1) : undefined}
+        />
+      )}
     </div>
   )
 }

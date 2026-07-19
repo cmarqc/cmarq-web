@@ -75,6 +75,7 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
   return (
     <AnimatePresence>
       <motion.div
+        key="lightbox"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -251,7 +252,9 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
         </motion.div>
       </motion.div>
 
-      {zoomOpen && <PhotoZoomViewer photo={photo} onClose={() => setZoomOpen(false)} />}
+      {zoomOpen && (
+        <PhotoZoomViewer key="zoom" photo={photo} onClose={() => setZoomOpen(false)} />
+      )}
     </AnimatePresence>
   )
 }
