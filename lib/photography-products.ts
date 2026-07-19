@@ -90,16 +90,19 @@ const collectionProducts: StoreProduct[] = (() => {
     if (existing) existing.count++
     else map.set(photo.collection, { count: 1, cover: photo })
   }
-  return Array.from(map.entries()).map(([name, { count, cover }]) => ({
-    id: productIdForCollection(name),
-    type: 'collection' as const,
-    title: `${name} Collection`,
-    subtitle: `${count} photographs`,
-    previewSrc: cover.src,
-    objectKey: collectionZipKey(name, cover),
-    personalCents: collectionPersonalCents(name, count),
-    photoCount: count,
-  }))
+  return Array.from(map.entries())
+    // A single photo isn't a "collection" — sell it as an individual photo only.
+    .filter(([, { count }]) => count >= 2)
+    .map(([name, { count, cover }]) => ({
+      id: productIdForCollection(name),
+      type: 'collection' as const,
+      title: `${name} Collection`,
+      subtitle: `${count} photographs`,
+      previewSrc: cover.src,
+      objectKey: collectionZipKey(name, cover),
+      personalCents: collectionPersonalCents(name, count),
+      photoCount: count,
+    }))
 })()
 
 /** Every purchasable product, keyed by its stable id. */

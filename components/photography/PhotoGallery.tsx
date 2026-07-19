@@ -397,12 +397,14 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
       </div>
 
       {/* Gentle, understated pointer to the collection buy option below the gallery */}
-      {storeEnabled() && activeCollection !== 'all' && (
-        <p className="mb-8 flex items-center gap-1.5 text-sm text-zinc-400 dark:text-zinc-500">
-          <FiArrowDown size={13} className="shrink-0" />
-          Like this experience? You can purchase the full {activeCollection} collection below.
-        </p>
-      )}
+      {storeEnabled() &&
+        activeCollection !== 'all' &&
+        (collections.find((c) => c.name === activeCollection)?.count ?? 0) >= 2 && (
+          <p className="mb-8 flex items-center gap-1.5 text-sm text-zinc-400 dark:text-zinc-500">
+            <FiArrowDown size={13} className="shrink-0" />
+            Like this experience? You can purchase the full {activeCollection} collection below.
+          </p>
+        )}
 
       {/* Top pagination — mirrors the bottom controls so long galleries are navigable without scrolling */}
       {pageCount > 1 && <div className="mb-8 flex justify-center">{renderPageNav()}</div>}
@@ -440,7 +442,8 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
         activeCollection !== 'all' &&
         (() => {
           const col = collections.find((c) => c.name === activeCollection)
-          if (!col) return null
+          // A single-photo "collection" isn't sold as a collection — see photography-products.ts.
+          if (!col || col.count < 2) return null
           const price = collectionPersonalCents(col.name, col.count)
           return (
             <div className="mt-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-brand/20 bg-brand/5 dark:bg-brand/10 p-4">
