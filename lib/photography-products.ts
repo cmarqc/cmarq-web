@@ -12,7 +12,7 @@ import { photos, type Photo } from '@/data/photos'
 import {
   collectionPersonalCents,
   collectionSlug,
-  PRICING,
+  photoPersonalCents,
   priceForLicense,
   productIdForCollection,
   productIdForPhoto,
@@ -80,9 +80,7 @@ const photoProducts: StoreProduct[] = photos.map((photo) => ({
   subtitle: photo.location,
   previewSrc: photo.src,
   objectKey: originalKeyForPhoto(photo),
-  personalCents: photo.featured
-    ? PRICING.featuredPhotoPersonalCents
-    : PRICING.photoPersonalCents,
+  personalCents: photoPersonalCents(photo.featured),
 }))
 
 const collectionProducts: StoreProduct[] = (() => {

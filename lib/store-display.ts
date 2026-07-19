@@ -75,6 +75,13 @@ export function collectionPersonalCents(name: string, count: number): number {
   )
 }
 
+/** Personal-license price for a single photo, using the featured tier when set. */
+export function photoPersonalCents(featured: boolean): number {
+  return featured
+    ? PRICING.featuredPhotoPersonalCents
+    : PRICING.photoPersonalCents
+}
+
 /** Applies the license tier to a personal-license base price. */
 export function priceForLicense(personalCents: number, license: LicenseId): number {
   if (license === 'commercial') {

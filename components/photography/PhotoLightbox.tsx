@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fi'
 import type { Photo } from '@/data/photos'
 import { getPhotoExif } from '@/data/photo-metadata'
-import { PRICING, productIdForPhoto, storeEnabled } from '@/lib/store-display'
+import { photoPersonalCents, productIdForPhoto, storeEnabled } from '@/lib/store-display'
 import { PurchaseButton } from './PurchaseButton'
 import { PreviewImage } from './PreviewImage'
 import { PhotoZoomViewer } from './PhotoZoomViewer'
@@ -236,7 +236,7 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
                 </p>
                 <PurchaseButton
                   productId={productIdForPhoto(photo.id)}
-                  priceCents={PRICING.photoPersonalCents}
+                  priceCents={photoPersonalCents(photo.featured)}
                 />
                 <Link
                   href="/licensing"
