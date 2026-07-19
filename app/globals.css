@@ -41,6 +41,33 @@
 }
 
 @layer components {
+  /* Slim horizontal scrollbar for scrollable rows (e.g. collection cards) */
+  .scrollbar-slim {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.zinc.400') transparent;
+  }
+
+  .dark .scrollbar-slim {
+    scrollbar-color: theme('colors.zinc.600') transparent;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand;
+  }
+
   .page-container {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }

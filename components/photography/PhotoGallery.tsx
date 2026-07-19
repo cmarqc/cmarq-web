@@ -265,7 +265,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
         <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-3">
           Collections
         </p>
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
+        <div className="flex gap-3 overflow-x-auto pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-slim">
           {/* All card */}
           <button
             onClick={() => selectCollection('all')}
