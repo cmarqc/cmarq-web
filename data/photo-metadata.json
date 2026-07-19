@@ -23,13 +23,23 @@
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "August 29, 2025",
+    "dateTaken": "August 28, 2025",
     "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/1250s",
-    "iso": 12800
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/400s",
+    "iso": 1600
   },
   "/photos/Bali/Bali-4.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 29, 2025",
+    "focalLength": "36mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/125s",
+    "iso": 3200
+  },
+  "/photos/Bali/Bali-5.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -38,16 +48,6 @@
     "aperture": "f/4.5",
     "shutterSpeed": "1/250s",
     "iso": 12800
-  },
-  "/photos/Bali/Bali-5.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "August 29, 2025",
-    "focalLength": "70mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/250s",
-    "iso": 3200
   },
   "/photos/Bali/Bali-6.jpg": {
     "dimensions": "1200 × 800",
@@ -89,27 +89,7 @@
     "shutterSpeed": "1/250s",
     "iso": 3200
   },
-  "/photos/Egypt/Egypt-001.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 26, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/500s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-002.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 27, 2026",
-    "focalLength": "23mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/160s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-003.jpg": {
+  "/photos/Egypt/Egypt-01.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -119,7 +99,7 @@
     "shutterSpeed": "1/320s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-004.jpg": {
+  "/photos/Egypt/Egypt-02.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -129,17 +109,7 @@
     "shutterSpeed": "1/10s",
     "iso": 3200
   },
-  "/photos/Egypt/Egypt-005.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/4s",
-    "iso": 1600
-  },
-  "/photos/Egypt/Egypt-006.jpg": {
+  "/photos/Egypt/Egypt-03.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -149,37 +119,7 @@
     "shutterSpeed": "1/30s",
     "iso": 1600
   },
-  "/photos/Egypt/Egypt-007.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "169mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-008.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "155mm",
-    "aperture": "f/11",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-009.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "155mm",
-    "aperture": "f/14",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-010.jpg": {
+  "/photos/Egypt/Egypt-04.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -189,7 +129,7 @@
     "shutterSpeed": "1/100s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-011.jpg": {
+  "/photos/Egypt/Egypt-05.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -199,27 +139,7 @@
     "shutterSpeed": "1/100s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-012.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "79mm",
-    "aperture": "f/11",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-013.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/30s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-014.jpg": {
+  "/photos/Egypt/Egypt-06.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -229,7 +149,7 @@
     "shutterSpeed": "1/30s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-015.jpg": {
+  "/photos/Egypt/Egypt-07.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -239,27 +159,7 @@
     "shutterSpeed": "1/30s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-016.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/11",
-    "shutterSpeed": "1/30s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-017.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/14",
-    "shutterSpeed": "1/30s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-018.jpg": {
+  "/photos/Egypt/Egypt-08.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -269,7 +169,7 @@
     "shutterSpeed": "1/30s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-019.jpg": {
+  "/photos/Egypt/Egypt-09.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -279,67 +179,7 @@
     "shutterSpeed": "1/60s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-020.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/11",
-    "shutterSpeed": "1/60s",
-    "iso": 400
-  },
-  "/photos/Egypt/Egypt-021.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "30mm",
-    "aperture": "f/18",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-022.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/18",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-023.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/13",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-024.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-025.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/13",
-    "shutterSpeed": "1/60s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-026.jpg": {
+  "/photos/Egypt/Egypt-10.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -349,7 +189,7 @@
     "shutterSpeed": "1/60s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-027.jpg": {
+  "/photos/Egypt/Egypt-11.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -359,97 +199,7 @@
     "shutterSpeed": "1/60s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-028.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 28, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/60s",
-    "iso": 200
-  },
-  "/photos/Egypt/Egypt-029.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "24mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-030.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-031.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-032.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/1600s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-033.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/1250s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-034.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "37mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-035.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-036.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/800s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-037.jpg": {
+  "/photos/Egypt/Egypt-12.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -459,7 +209,7 @@
     "shutterSpeed": "1/400s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-038.jpg": {
+  "/photos/Egypt/Egypt-13.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -469,37 +219,7 @@
     "shutterSpeed": "1/1250s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-039.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/80s",
-    "iso": 200
-  },
-  "/photos/Egypt/Egypt-040.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/60s",
-    "iso": 2000
-  },
-  "/photos/Egypt/Egypt-041.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "23mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/80s",
-    "iso": 1250
-  },
-  "/photos/Egypt/Egypt-042.jpg": {
+  "/photos/Egypt/Egypt-14.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -509,137 +229,7 @@
     "shutterSpeed": "1/100s",
     "iso": 2500
   },
-  "/photos/Egypt/Egypt-043.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "135mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/100s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-044.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "60mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/6s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-045.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/250s",
-    "iso": 800
-  },
-  "/photos/Egypt/Egypt-046.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/20s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-047.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "189mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/160s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-048.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/80s",
-    "iso": 500
-  },
-  "/photos/Egypt/Egypt-049.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "32mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/100s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-050.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "31mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/100s",
-    "iso": 5000
-  },
-  "/photos/Egypt/Egypt-051.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/60s",
-    "iso": 640
-  },
-  "/photos/Egypt/Egypt-052.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/60s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-053.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "29mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/100s",
-    "iso": 2000
-  },
-  "/photos/Egypt/Egypt-054.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "48mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/160s",
-    "iso": 4000
-  },
-  "/photos/Egypt/Egypt-055.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "35mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/125s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-056.jpg": {
+  "/photos/Egypt/Egypt-15.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -649,157 +239,7 @@
     "shutterSpeed": "1/125s",
     "iso": 6400
   },
-  "/photos/Egypt/Egypt-057.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "21mm",
-    "aperture": "f/6.3",
-    "shutterSpeed": "1/160s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-058.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "50mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/50s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-059.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "June 30, 2026",
-    "focalLength": "33mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/125s",
-    "iso": 2000
-  },
-  "/photos/Egypt/Egypt-060.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/60s",
-    "iso": 5000
-  },
-  "/photos/Egypt/Egypt-061.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/125s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-062.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/60s",
-    "iso": 2500
-  },
-  "/photos/Egypt/Egypt-063.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/100s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-064.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "35mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/80s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-065.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "35mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/125s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-066.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "20mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/60s",
-    "iso": 3200
-  },
-  "/photos/Egypt/Egypt-067.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "30mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/100s",
-    "iso": 5000
-  },
-  "/photos/Egypt/Egypt-068.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "24mm",
-    "aperture": "f/7.1",
-    "shutterSpeed": "1/200s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-069.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/320s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-070.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/320s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-071.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "100mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/20s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-072.jpg": {
+  "/photos/Egypt/Egypt-16.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -809,37 +249,7 @@
     "shutterSpeed": "1/8s",
     "iso": 6400
   },
-  "/photos/Egypt/Egypt-073.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "38mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/125s",
-    "iso": 5000
-  },
-  "/photos/Egypt/Egypt-074.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 1, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/200s",
-    "iso": 2000
-  },
-  "/photos/Egypt/Egypt-075.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-076.jpg": {
+  "/photos/Egypt/Egypt-17.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -849,57 +259,7 @@
     "shutterSpeed": "1/100s",
     "iso": 640
   },
-  "/photos/Egypt/Egypt-077.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/80s",
-    "iso": 500
-  },
-  "/photos/Egypt/Egypt-078.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "20mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/15s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-079.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/40s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-080.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/80s",
-    "iso": 500
-  },
-  "/photos/Egypt/Egypt-081.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "26mm",
-    "aperture": "f/7.1",
-    "shutterSpeed": "1/250s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-082.jpg": {
+  "/photos/Egypt/Egypt-18.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -909,27 +269,7 @@
     "shutterSpeed": "1/320s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-083.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/320s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-084.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "29mm",
-    "aperture": "f/8",
-    "shutterSpeed": "1/320s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-085.jpg": {
+  "/photos/Egypt/Egypt-19.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -939,27 +279,7 @@
     "shutterSpeed": "1/320s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-086.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-087.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-088.jpg": {
+  "/photos/Egypt/Egypt-20.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -969,77 +289,7 @@
     "shutterSpeed": "1/800s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-089.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "21mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-090.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "22mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/80s",
-    "iso": 5000
-  },
-  "/photos/Egypt/Egypt-091.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-092.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "24mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/50s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-093.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/6.3",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-094.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-095.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "July 2, 2026",
-    "focalLength": "109mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-096.jpg": {
+  "/photos/Egypt/Egypt-21.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1049,17 +299,7 @@
     "shutterSpeed": "1/400s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-097.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 3, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-098.jpg": {
+  "/photos/Egypt/Egypt-22.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1069,7 +309,7 @@
     "shutterSpeed": "1/500s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-099.jpg": {
+  "/photos/Egypt/Egypt-23.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1079,57 +319,7 @@
     "shutterSpeed": "1/500s",
     "iso": 100
   },
-  "/photos/Egypt/Egypt-100.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
-    "focalLength": "31mm",
-    "aperture": "f/10",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-101.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
-    "focalLength": "24mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/400s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-102.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
-    "focalLength": "30mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/30s",
-    "iso": 6400
-  },
-  "/photos/Egypt/Egypt-103.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/60s",
-    "iso": 3200
-  },
-  "/photos/Egypt/Egypt-104.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
-    "focalLength": "18mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/60s",
-    "iso": 1600
-  },
-  "/photos/Egypt/Egypt-105.jpg": {
+  "/photos/Egypt/Egypt-24.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1139,27 +329,17 @@
     "shutterSpeed": "1/60s",
     "iso": 1600
   },
-  "/photos/Egypt/Egypt-106.jpg": {
+  "/photos/Europe/Europe-01.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
-    "focalLength": "26mm",
-    "aperture": "f/9",
-    "shutterSpeed": "1/500s",
-    "iso": 100
-  },
-  "/photos/Egypt/Egypt-107.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "July 4, 2026",
+    "dateTaken": "July 27, 2023",
     "focalLength": "55mm",
-    "aperture": "f/8",
-    "shutterSpeed": "1/500s",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/320s",
     "iso": 100
   },
-  "/photos/Europe/Europe-1.jpg": {
+  "/photos/Europe/Europe-02.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1169,17 +349,7 @@
     "shutterSpeed": "1/500s",
     "iso": 100
   },
-  "/photos/Europe/Europe-10.jpg": {
-    "dimensions": "800 × 1200",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "August 8, 2023",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/800s",
-    "iso": 400
-  },
-  "/photos/Europe/Europe-2.jpg": {
+  "/photos/Europe/Europe-03.jpg": {
     "dimensions": "800 × 1200",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1189,7 +359,7 @@
     "shutterSpeed": "1/250s",
     "iso": 100
   },
-  "/photos/Europe/Europe-3.jpg": {
+  "/photos/Europe/Europe-04.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1199,7 +369,7 @@
     "shutterSpeed": "1/30s",
     "iso": 100
   },
-  "/photos/Europe/Europe-4.jpg": {
+  "/photos/Europe/Europe-05.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1209,7 +379,27 @@
     "shutterSpeed": "1/60s",
     "iso": 12800
   },
-  "/photos/Europe/Europe-5.jpg": {
+  "/photos/Europe/Europe-06.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 31, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/200s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-07.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 31, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/200s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-08.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1219,7 +409,7 @@
     "shutterSpeed": "1/500s",
     "iso": 400
   },
-  "/photos/Europe/Europe-6.jpg": {
+  "/photos/Europe/Europe-09.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1229,7 +419,7 @@
     "shutterSpeed": "1/500s",
     "iso": 12800
   },
-  "/photos/Europe/Europe-7.jpg": {
+  "/photos/Europe/Europe-10.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1239,7 +429,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/Europe/Europe-8.jpg": {
+  "/photos/Europe/Europe-11.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1249,7 +439,17 @@
     "shutterSpeed": "1/1250s",
     "iso": 100
   },
-  "/photos/Europe/Europe-9.jpg": {
+  "/photos/Europe/Europe-12.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 8, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/500s",
+    "iso": 100
+  },
+  "/photos/Europe/Europe-13.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1259,7 +459,27 @@
     "shutterSpeed": "1/800s",
     "iso": 200
   },
-  "/photos/LakeWashington/Cruise-01.jpg": {
+  "/photos/Europe/Europe-14.jpg": {
+    "dimensions": "800 × 1200",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 8, 2023",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/800s",
+    "iso": 400
+  },
+  "/photos/Hawaii/Jurassic.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "August 23, 2024",
+    "focalLength": "18mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/500s",
+    "iso": 100
+  },
+  "/photos/LakeWashington/LakeWashington-01.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1269,7 +489,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-02.jpg": {
+  "/photos/LakeWashington/LakeWashington-02.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1279,7 +499,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-03.jpg": {
+  "/photos/LakeWashington/LakeWashington-03.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1289,7 +509,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-04.jpg": {
+  "/photos/LakeWashington/LakeWashington-04.jpg": {
     "dimensions": "1200 × 857",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1299,7 +519,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-05.jpg": {
+  "/photos/LakeWashington/LakeWashington-05.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1309,7 +529,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-06.jpg": {
+  "/photos/LakeWashington/LakeWashington-06.jpg": {
     "dimensions": "1200 × 600",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1319,7 +539,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-07.jpg": {
+  "/photos/LakeWashington/LakeWashington-07.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1329,17 +549,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-08.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 2, 2026",
-    "focalLength": "55mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/1000s",
-    "iso": 100
-  },
-  "/photos/LakeWashington/Cruise-09.jpg": {
+  "/photos/LakeWashington/LakeWashington-08.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1349,17 +559,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-10.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "June 2, 2026",
-    "focalLength": "155mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/1000s",
-    "iso": 100
-  },
-  "/photos/LakeWashington/Cruise-11.jpg": {
+  "/photos/LakeWashington/LakeWashington-09.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1369,7 +569,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-12.jpg": {
+  "/photos/LakeWashington/LakeWashington-10.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1379,7 +579,7 @@
     "shutterSpeed": "1/1000s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-13.jpg": {
+  "/photos/LakeWashington/LakeWashington-11.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1389,7 +589,7 @@
     "shutterSpeed": "1/400s",
     "iso": 100
   },
-  "/photos/LakeWashington/Cruise-14.jpg": {
+  "/photos/LakeWashington/LakeWashington-12.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S55-250mm f/4-5.6 IS STM",
@@ -1399,17 +599,27 @@
     "shutterSpeed": "1/500s",
     "iso": 100
   },
-  "/photos/SouthAmerica/Peru/Peru-1.jpg": {
+  "/photos/Photography/Moon.jpg": {
+    "dimensions": "1200 × 1200",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 30, 2026",
+    "focalLength": "250mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/250s",
+    "iso": 100
+  },
+  "/photos/Photography/Space-Needle.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "May 23, 2024",
-    "focalLength": "22mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/640s",
-    "iso": 1600
+    "dateTaken": "July 26, 2025",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/500s",
+    "iso": 100
   },
-  "/photos/SouthAmerica/Peru/Peru-2.jpg": {
+  "/photos/SouthAmerica/Peru/Peru-1.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1418,6 +628,26 @@
     "aperture": "f/4",
     "shutterSpeed": "1/640s",
     "iso": 200
+  },
+  "/photos/SouthAmerica/Peru/Peru-10.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "55mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/SouthAmerica/Peru/Peru-2.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "30mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 400
   },
   "/photos/SouthAmerica/Peru/Peru-3.jpg": {
     "dimensions": "1200 × 800",
@@ -1444,32 +674,12 @@
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
     "dateTaken": "May 23, 2024",
-    "focalLength": "18mm",
-    "aperture": "f/4",
-    "shutterSpeed": "1/640s",
-    "iso": 200
-  },
-  "/photos/SouthAmerica/Peru/Peru-6.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "May 23, 2024",
-    "focalLength": "127mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/SouthAmerica/Peru/Peru-7.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "May 23, 2024",
     "focalLength": "37mm",
     "aperture": "f/5",
     "shutterSpeed": "1/640s",
     "iso": 100
   },
-  "/photos/SouthAmerica/Peru/Peru-8.jpg": {
+  "/photos/SouthAmerica/Peru/Peru-6.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1479,7 +689,17 @@
     "shutterSpeed": "1/640s",
     "iso": 100
   },
-  "/photos/SouthAmerica/Peru/Peru-9.jpg": {
+  "/photos/SouthAmerica/Peru/Peru-7.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "48mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 100
+  },
+  "/photos/SouthAmerica/Peru/Peru-8.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1489,7 +709,17 @@
     "shutterSpeed": "1/640s",
     "iso": 200
   },
-  "/photos/Tulips/Tulips-1.jpg": {
+  "/photos/SouthAmerica/Peru/Peru-9.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "May 23, 2024",
+    "focalLength": "18mm",
+    "aperture": "f/4",
+    "shutterSpeed": "1/640s",
+    "iso": 200
+  },
+  "/photos/Tulips/Tulips-01.jpg": {
     "dimensions": "1200 × 800",
     "camera": "Canon EOS Rebel SL3",
     "lens": "EF-S18-55mm f/4-5.6 IS STM",
@@ -1498,6 +728,86 @@
     "aperture": "f/5",
     "shutterSpeed": "1/640s",
     "iso": 100
+  },
+  "/photos/Tulips/Tulips-02.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-03.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "43mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-04.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "84mm",
+    "aperture": "f/4.5",
+    "shutterSpeed": "1/640s",
+    "iso": 400
+  },
+  "/photos/Tulips/Tulips-05.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "100mm",
+    "aperture": "f/5",
+    "shutterSpeed": "1/640s",
+    "iso": 400
+  },
+  "/photos/Tulips/Tulips-06.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "250mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-07.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S55-250mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "250mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-08.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "55mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
+  },
+  "/photos/Tulips/Tulips-09.jpg": {
+    "dimensions": "1200 × 800",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "April 20, 2024",
+    "focalLength": "46mm",
+    "aperture": "f/5.6",
+    "shutterSpeed": "1/640s",
+    "iso": 800
   },
   "/photos/Tulips/Tulips-10.jpg": {
     "dimensions": "1200 × 800",
@@ -1516,86 +826,6 @@
     "dateTaken": "April 20, 2024",
     "focalLength": "43mm",
     "aperture": "f/5",
-    "shutterSpeed": "1/640s",
-    "iso": 800
-  },
-  "/photos/Tulips/Tulips-2.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "55mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/640s",
-    "iso": 800
-  },
-  "/photos/Tulips/Tulips-3.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "43mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/640s",
-    "iso": 800
-  },
-  "/photos/Tulips/Tulips-4.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "84mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/640s",
-    "iso": 400
-  },
-  "/photos/Tulips/Tulips-5.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "70mm",
-    "aperture": "f/4.5",
-    "shutterSpeed": "1/640s",
-    "iso": 100
-  },
-  "/photos/Tulips/Tulips-6.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "100mm",
-    "aperture": "f/5",
-    "shutterSpeed": "1/640s",
-    "iso": 400
-  },
-  "/photos/Tulips/Tulips-7.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "250mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/640s",
-    "iso": 800
-  },
-  "/photos/Tulips/Tulips-8.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S55-250mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "250mm",
-    "aperture": "f/5.6",
-    "shutterSpeed": "1/640s",
-    "iso": 800
-  },
-  "/photos/Tulips/Tulips-9.jpg": {
-    "dimensions": "1200 × 800",
-    "camera": "Canon EOS Rebel SL3",
-    "lens": "EF-S18-55mm f/4-5.6 IS STM",
-    "dateTaken": "April 20, 2024",
-    "focalLength": "46mm",
-    "aperture": "f/5.6",
     "shutterSpeed": "1/640s",
     "iso": 800
   }
