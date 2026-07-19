@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FiArrowDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { FiArrowDown, FiChevronLeft, FiChevronRight, FiSearch, FiX } from 'react-icons/fi'
 import { PhotoCard } from './PhotoCard'
 import { PhotoLightbox } from './PhotoLightbox'
 import { PurchaseButton } from './PurchaseButton'
@@ -97,7 +97,10 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
   const [sortBy, setSortBy] = useState<SortKey>('default')
   const [page, setPage] = useState(1)
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
+  const [collectionSearch, setCollectionSearch] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
   const galleryRef = useRef<HTMLDivElement>(null)
+  const searchInputRef = useRef<HTMLInputElement>(null)
 
   const collections = useMemo(() => {
     const seen = new Map<string, { cover: Photo; count: number }>()
@@ -109,6 +112,18 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
     }
     return Array.from(seen.entries()).map(([name, { cover, count }]) => ({ name, cover, count }))
   }, [photos])
+
+  // Collections narrowed by the search box (case-insensitive substring on the name).
+  const visibleCollections = useMemo(() => {
+    const q = collectionSearch.trim().toLowerCase()
+    if (!q) return collections
+    return collections.filter((col) => col.name.toLowerCase().includes(q))
+  }, [collections, collectionSearch])
+
+  // Focus the search field the moment it opens so the user can type immediately.
+  useEffect(() => {
+    if (searchOpen) searchInputRef.current?.focus()
+  }, [searchOpen])
 
   // Sub-collections available within the active collection, in first-seen order.
   // Empty when "All" is selected or the collection has no sub-grouped photos.
@@ -266,9 +281,44 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
     <div>
       {/* Collections */}
       <div className="mb-10">
-        <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-3">
-          Collections
-        </p>
+        <div className="mb-3 flex items-center gap-3">
+          <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
+            Collections
+          </p>
+          {searchOpen && (
+            <div className="relative flex-1 max-w-xs">
+              <FiSearch
+                size={14}
+                className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500"
+              />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={collectionSearch}
+                onChange={(e) => setCollectionSearch(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape') {
+                    setCollectionSearch('')
+                    setSearchOpen(false)
+                  }
+                }}
+                placeholder="Search collections…"
+                className="w-full rounded-lg border border-zinc-200 bg-white py-1.5 pl-8 pr-8 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-brand focus:outline-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder:text-zinc-500"
+              />
+              <button
+                type="button"
+                aria-label="Close search"
+                onClick={() => {
+                  setCollectionSearch('')
+                  setSearchOpen(false)
+                }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+              >
+                <FiX size={14} />
+              </button>
+            </div>
+          )}
+        </div>
         <div className="flex gap-3 overflow-x-auto pb-3 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-slim">
           {/* All card */}
           <button
@@ -287,7 +337,26 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             )}
           </button>
 
-          {collections.map((col) => (
+          {/* Search card — toggles the collection-name search field */}
+          <button
+            type="button"
+            onClick={() => setSearchOpen((open) => !open)}
+            aria-pressed={searchOpen}
+            className={`relative flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden transition-all duration-200 ${
+              searchOpen ? 'opacity-100' : 'opacity-70 hover:opacity-100'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-200 to-zinc-400 dark:from-zinc-700 dark:to-zinc-900" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 text-zinc-700 dark:text-zinc-200">
+              <FiSearch size={20} />
+              <span className="text-sm font-semibold">Search</span>
+            </div>
+            {searchOpen && (
+              <div className="absolute inset-0 rounded-xl ring-2 ring-inset ring-brand pointer-events-none" />
+            )}
+          </button>
+
+          {visibleCollections.map((col) => (
             <button
               key={col.name}
               onClick={() => selectCollection(col.name)}
@@ -312,6 +381,12 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
               )}
             </button>
           ))}
+
+          {searchOpen && visibleCollections.length === 0 && (
+            <p className="flex h-24 items-center px-2 text-sm text-zinc-400 dark:text-zinc-500">
+              No collections match “{collectionSearch.trim()}”.
+            </p>
+          )}
         </div>
       </div>
 
