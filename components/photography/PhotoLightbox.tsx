@@ -29,6 +29,16 @@ interface PhotoLightboxProps {
   onNext?: () => void
 }
 
+/** "6000 × 4000" → "6000 × 4000 (24 MP)"; leaves the string as-is if unparseable. */
+function formatResolution(dimensions?: string): string {
+  if (!dimensions) return ''
+  const m = dimensions.match(/(\d+)\D+(\d+)/)
+  if (!m) return dimensions
+  const mp = (Number(m[1]) * Number(m[2])) / 1_000_000
+  if (!(mp >= 1)) return dimensions
+  return `${dimensions} (${mp >= 10 ? Math.round(mp) : mp.toFixed(1)} MP)`
+}
+
 export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxProps) {
   const { available, stats, isLiked, toggleLike, recordView } = usePhotoStats()
   const photoStats = stats[photo.id]
@@ -45,7 +55,7 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
     { label: 'Camera', value: exif?.camera ?? photo.camera ?? '' },
     { label: 'Lens', value: exif?.lens ?? '' },
     { label: 'Date', value: exif?.dateTaken ?? '' },
-    { label: 'Resolution', value: exif?.dimensions ?? '' },
+    { label: 'Resolution', value: formatResolution(exif?.dimensions) },
     { label: 'Focal length', value: exif?.focalLength ?? '' },
     { label: 'Aperture', value: exif?.aperture ?? '' },
     { label: 'Shutter', value: exif?.shutterSpeed ?? '' },
@@ -223,7 +233,7 @@ export function PhotoLightbox({ photo, onClose, onPrev, onNext }: PhotoLightboxP
             {storeEnabled() && (
               <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-2">
                 <p className="text-xs text-zinc-400 dark:text-zinc-500">
-                  Full-resolution download, signed in the corner — no watermark.{' '}
+                  Full-resolution download{exif?.dimensions ? ` (${exif.dimensions})` : ''}, signed in the corner — no watermark.{' '}
                   <Link
                     href="/licensing"
                     target="_blank"
