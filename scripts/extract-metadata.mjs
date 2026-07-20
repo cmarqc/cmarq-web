@@ -1,7 +1,20 @@
-// Extracts camera / EXIF metadata from every JPEG under public/photos and writes
-// it to data/photo-metadata.json, keyed by the photo's public `src` path.
+// Extracts camera / EXIF metadata from every photo and writes it to
+// data/photo-metadata.json, keyed by the photo's public `src` path.
 //
-// Run with:  npm run photos:metadata
+// The photo set is always derived from the local public/photos tree (that's what
+// the gallery shows). The `--source` flag only changes where the *pixels* are
+// read from:
+//
+//   npm run photos:metadata                # source: bundled public/photos previews
+//   npm run photos:metadata:r2             # source: full-res originals in R2
+//
+// Reading from R2 matters for the "Resolution" row in the lightbox: the bundled
+// public/photos files are web-optimized previews (~1200px), so a local run reports
+// preview dimensions, not the true resolution a buyer downloads. `--source r2`
+// reads the genuine originals (e.g. 6000 × 4000) once they're uploaded.
+//
+// Env for --source r2 (loaded via `node --env-file=.env`): R2_ACCOUNT_ID,
+// R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET.
 //
 // The generated JSON is consumed (type-safely) by data/photo-metadata.ts and
 // surfaced in the photo lightbox. Re-run whenever photos are added or replaced.
@@ -11,32 +24,88 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 import exifReader from 'exif-reader'
+import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(__dirname, '..')
 const photosDir = path.join(projectRoot, 'public', 'photos')
 const outFile = path.join(projectRoot, 'data', 'photo-metadata.json')
 
-/** Recursively collect every .jpg/.jpeg file under a directory. */
-async function collectJpegs(dir) {
-  const entries = await readdir(dir, { withFileTypes: true })
-  const files = []
-  for (const entry of entries) {
-    const full = path.join(dir, entry.name)
-    if (entry.isDirectory()) {
-      files.push(...(await collectJpegs(full)))
-    } else if (/\.jpe?g$/i.test(entry.name)) {
-      files.push(full)
-    }
-  }
-  return files
+const args = process.argv.slice(2)
+const getOpt = (name) => {
+  const i = args.indexOf(`--${name}`)
+  return i >= 0 ? args[i + 1] : undefined
 }
 
-/** Build the public `src` path (matching data/photos.ts) from an absolute file path. */
-function toSrc(absPath) {
-  const rel = path.relative(path.join(projectRoot, 'public'), absPath)
+const source = getOpt('source') ?? 'local'
+if (source !== 'local' && source !== 'r2') {
+  console.error(`--source must be "local" or "r2" (got "${source}")`)
+  process.exit(1)
+}
+
+function requireEnv(name) {
+  const v = process.env[name]
+  if (!v) {
+    console.error(`Missing required env var: ${name} (is it set in .env?)`)
+    process.exit(1)
+  }
+  return v
+}
+
+// R2 client is only wired up when reading originals from the bucket.
+let s3 = null
+let originalsBucket = null
+if (source === 'r2') {
+  const accountId = requireEnv('R2_ACCOUNT_ID')
+  requireEnv('R2_ACCESS_KEY_ID')
+  requireEnv('R2_SECRET_ACCESS_KEY')
+  originalsBucket = requireEnv('R2_BUCKET')
+  s3 = new S3Client({
+    region: 'auto',
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: {
+      accessKeyId: process.env.R2_ACCESS_KEY_ID,
+      secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+    },
+  })
+}
+
+/** Recursively collect gallery-relative JPEG paths ("Europe/Europe-1.jpg"). */
+async function collectRelPaths(dir) {
+  const out = []
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      out.push(...(await collectRelPaths(full)))
+    } else if (/\.jpe?g$/i.test(entry.name)) {
+      out.push(path.relative(photosDir, full).split(path.sep).join('/'))
+    }
+  }
+  return out
+}
+
+/** Build the public `src` path (matching data/photos.ts) from a gallery-relative path. */
+function toSrc(rel) {
   // Use POSIX separators and percent-encode any unsafe characters (e.g. spaces as %20).
-  return '/' + encodeURI(rel.split(path.sep).join('/'))
+  return '/' + encodeURI(`photos/${rel}`)
+}
+
+async function streamToBuffer(stream) {
+  const chunks = []
+  for await (const chunk of stream) chunks.push(chunk)
+  return Buffer.concat(chunks)
+}
+
+/** Read the source image bytes for a gallery-relative path. */
+async function readSource(rel) {
+  if (source === 'r2') {
+    // Private originals key is "photos/<rel>" with literal (decoded) spaces.
+    const res = await s3.send(
+      new GetObjectCommand({ Bucket: originalsBucket, Key: `photos/${rel}` }),
+    )
+    return streamToBuffer(res.Body)
+  }
+  return readFile(path.join(photosDir, rel.split('/').join(path.sep)))
 }
 
 function formatShutter(exposureTime) {
@@ -66,15 +135,18 @@ function formatDate(date) {
   }).format(d)
 }
 
-async function extract(absPath) {
-  const buffer = await readFile(absPath)
-  const image = sharp(buffer)
-  const meta = await image.metadata()
+async function extract(buffer) {
+  const meta = await sharp(buffer).metadata()
 
   const result = {}
 
   if (meta.width && meta.height) {
-    result.dimensions = `${meta.width} × ${meta.height}`
+    // EXIF orientations 5–8 store the image rotated 90°, so the visually-correct
+    // (as-displayed / as-downloaded) resolution swaps the stored width & height.
+    const rotated = meta.orientation != null && meta.orientation >= 5
+    const w = rotated ? meta.height : meta.width
+    const h = rotated ? meta.width : meta.height
+    result.dimensions = `${w} × ${h}`
   }
 
   if (meta.exif) {
@@ -108,17 +180,25 @@ async function extract(absPath) {
 }
 
 async function main() {
-  const files = (await collectJpegs(photosDir)).sort()
+  const rels = (await collectRelPaths(photosDir)).sort()
+  console.log(`Metadata: ${rels.length} photo(s) · source=${source}`)
+
   const map = {}
-  for (const file of files) {
+  let failed = 0
+  for (const rel of rels) {
     try {
-      map[toSrc(file)] = await extract(file)
+      map[toSrc(rel)] = await extract(await readSource(rel))
     } catch (err) {
-      console.warn(`Skipping ${file}: ${err.message}`)
+      failed++
+      console.warn(`Skipping ${rel}: ${err.message}`)
     }
   }
   await writeFile(outFile, JSON.stringify(map, null, 2) + '\n')
-  console.log(`Wrote metadata for ${Object.keys(map).length} photos to ${path.relative(projectRoot, outFile)}`)
+  console.log(
+    `Wrote metadata for ${Object.keys(map).length} photos to ${path.relative(projectRoot, outFile)}` +
+      (failed ? ` (${failed} failed)` : ''),
+  )
+  if (failed > 0) process.exitCode = 1
 }
 
 main().catch((err) => {

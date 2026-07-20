@@ -8,6 +8,7 @@
     "start": "node server.js",
     "lint": "eslint .",
     "photos:metadata": "node scripts/extract-metadata.mjs",
+    "photos:metadata:r2": "node --env-file=.env scripts/extract-metadata.mjs --source r2",
     "photos:previews": "node --env-file=.env scripts/generate-previews.mjs"
   },
   "overrides": {
