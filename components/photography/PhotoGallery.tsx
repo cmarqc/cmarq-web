@@ -24,10 +24,10 @@ interface PhotoGalleryProps {
 const filterCategories: { value: PhotoCategory; label: string }[] = [
   { value: 'all', label: 'All' },
   { value: 'landscape', label: 'Landscape' },
+  { value: 'portrait', label: 'Portrait' },
   { value: 'nature', label: 'Nature' },
   { value: 'architecture', label: 'Architecture' },
   { value: 'street', label: 'Street' },
-  { value: 'portrait', label: 'Portrait' },
   { value: 'astro', label: 'Astro' },
   { value: 'abstract', label: 'Abstract' },
   { value: 'fine art', label: 'Fine Art' },
