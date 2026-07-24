@@ -3,7 +3,15 @@
 import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FiArrowDown, FiChevronLeft, FiChevronRight, FiSearch, FiX } from 'react-icons/fi'
+import {
+  FiArrowDown,
+  FiChevronLeft,
+  FiChevronRight,
+  FiChevronsLeft,
+  FiChevronsRight,
+  FiSearch,
+  FiX,
+} from 'react-icons/fi'
 import { PhotoCard } from './PhotoCard'
 import { PhotoLightbox } from './PhotoLightbox'
 import { PurchaseButton } from './PurchaseButton'
@@ -209,6 +217,14 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
   const renderPageNav = () => (
     <nav className="flex items-center gap-1.5" aria-label="Gallery pagination">
       <button
+        onClick={() => goToPage(1)}
+        disabled={currentPage === 1}
+        aria-label="First page"
+        className="flex items-center justify-center w-9 h-9 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+      >
+        <FiChevronsLeft size={18} />
+      </button>
+      <button
         onClick={() => goToPage(currentPage - 1)}
         disabled={currentPage === 1}
         aria-label="Previous page"
@@ -249,6 +265,14 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
         className="flex items-center justify-center w-9 h-9 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:pointer-events-none transition-colors"
       >
         <FiChevronRight size={18} />
+      </button>
+      <button
+        onClick={() => goToPage(pageCount)}
+        disabled={currentPage === pageCount}
+        aria-label="Last page"
+        className="flex items-center justify-center w-9 h-9 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+      >
+        <FiChevronsRight size={18} />
       </button>
     </nav>
   )
