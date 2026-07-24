@@ -14,6 +14,8 @@ export interface PhotoExif {
   lens?: string
   /** Capture date, pre-formatted, e.g. "May 23, 2024". */
   dateTaken?: string
+  /** Capture timestamp (ms, includes time-of-day) for chronological sorting. */
+  dateTakenTs?: number
   /** Pixel dimensions, e.g. "1200 × 800". */
   dimensions?: string
   /** Focal length, e.g. "22mm". */

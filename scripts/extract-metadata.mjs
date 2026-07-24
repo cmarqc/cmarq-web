@@ -121,10 +121,7 @@ function formatCamera(make, model) {
   return model.toLowerCase().startsWith(make.toLowerCase()) ? model : `${make} ${model}`
 }
 
-function formatDate(date) {
-  if (!date) return undefined
-  const d = date instanceof Date ? date : new Date(date)
-  if (Number.isNaN(d.getTime())) return undefined
+function formatDate(d) {
   // EXIF timestamps are local wall-clock time; format in UTC so the calendar
   // date the photo was taken is preserved regardless of the viewer's timezone.
   return new Intl.DateTimeFormat('en-US', {
@@ -164,8 +161,14 @@ async function extract(buffer) {
       if (camera) result.camera = camera
       if (photo.LensModel) result.lens = photo.LensModel
 
-      const dateTaken = formatDate(photo.DateTimeOriginal ?? image.DateTime)
-      if (dateTaken) result.dateTaken = dateTaken
+      const rawDate = photo.DateTimeOriginal ?? image.DateTime
+      const d = rawDate ? (rawDate instanceof Date ? rawDate : new Date(rawDate)) : undefined
+      if (d && !Number.isNaN(d.getTime())) {
+        result.dateTaken = formatDate(d)
+        // Full timestamp (including time-of-day) for chronological sorting — `dateTaken`
+        // above is date-only, so same-day photos would otherwise sort as ties.
+        result.dateTakenTs = d.getTime()
+      }
 
       if (photo.FocalLength) result.focalLength = `${Math.round(photo.FocalLength)}mm`
       if (photo.FNumber) result.aperture = `f/${photo.FNumber}`

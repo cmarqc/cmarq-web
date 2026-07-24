@@ -89,11 +89,14 @@ const statSortOptions: { value: SortKey; label: string }[] = [
   { value: 'views', label: 'Most viewed' },
 ]
 
-/** Capture timestamp (ms) parsed from EXIF `dateTaken`, or null when unknown. */
+/** Capture timestamp (ms) from EXIF, or null when unknown. */
 function captureTime(photo: Photo): number | null {
-  const dateTaken = getPhotoExif(photo.src)?.dateTaken
-  if (!dateTaken) return null
-  const t = Date.parse(dateTaken)
+  const exif = getPhotoExif(photo.src)
+  if (exif?.dateTakenTs != null) return exif.dateTakenTs
+  // Fall back to the date-only display string (no time-of-day) for photos whose
+  // metadata predates the dateTakenTs field.
+  if (!exif?.dateTaken) return null
+  const t = Date.parse(exif.dateTaken)
   return Number.isNaN(t) ? null : t
 }
 
