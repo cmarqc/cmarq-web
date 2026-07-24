@@ -204,11 +204,20 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
     [sorted, currentPage],
   )
 
-  // Round-robin distribute so photos read left-to-right across each row (photo 0,1,2 fill
-  // the first row) while preserving the masonry layout of uneven photo heights.
+  // Greedy shortest-column masonry: each photo goes into whichever column is
+  // currently shortest, using height/width as a proxy for rendered height (columns
+  // render at equal width, so this ratio is directly comparable across columns).
+  // A naive i % columnCount round-robin looks right only when every row is the same
+  // height — one portrait photo throws off a column's height and visually scrambles
+  // the reading order for everything after it.
   const columns = useMemo(() => {
     const cols: Photo[][] = Array.from({ length: columnCount }, () => [])
-    paginated.forEach((photo, i) => cols[i % columnCount].push(photo))
+    const colHeights = Array<number>(columnCount).fill(0)
+    paginated.forEach((photo) => {
+      const shortest = colHeights.indexOf(Math.min(...colHeights))
+      cols[shortest].push(photo)
+      colHeights[shortest] += photo.height / photo.width
+    })
     return cols
   }, [paginated, columnCount])
 
@@ -511,7 +520,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
       {/* Top pagination — mirrors the bottom controls so long galleries are navigable without scrolling */}
       {pageCount > 1 && <div className="mb-8 flex justify-center">{renderPageNav()}</div>}
 
-      {/* Masonry-style gallery — round-robin columns keep left-to-right reading order */}
+      {/* Masonry-style gallery — shortest-column placement keeps reading order top-to-bottom */}
       <div className="flex gap-4 items-start">
         {columns.map((column, colIndex) => (
           <div key={colIndex} className="flex-1 min-w-0 space-y-4">
