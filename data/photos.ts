@@ -73,6 +73,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'street'],
     collection: 'Europe',
     subcollection: 'Iceland',
+    instagram: 'C1Dj4PJpn8U/?img_index=1'
   },
   {
     id: 'Europe-2',
@@ -86,6 +87,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Europe',
     subcollection: 'Iceland',
+    instagram: 'C1Dj4PJpn8U/?img_index=2'
   },
   {
     id: 'Europe-3',
@@ -99,6 +101,7 @@ export const photos: Photo[] = [
     category: ['portrait', 'architecture', 'commercial'],
     collection: 'Europe',
     subcollection: 'Iceland',
+    instagram: 'C1Dj4PJpn8U/?img_index=3'
   },
   {
     id: 'Europe-4',
@@ -112,6 +115,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'architecture'],
     collection: 'Europe',
     subcollection: 'Italy',
+    instagram: 'C1Dj4PJpn8U/?img_index=4'
   },
   {
     id: 'Europe-5',
@@ -124,7 +128,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'architecture'],
     collection: 'Europe',
-    subcollection: 'Italy',
+    subcollection: 'Italy'
   },
   {
     id: 'Europe-6',
@@ -138,6 +142,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'street'],
     collection: 'Europe',
     subcollection: 'Italy',
+    instagram: 'C1Dj4PJpn8U/?img_index=7'
   },
   {
     id: 'Europe-7',
@@ -164,6 +169,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'architecture'],
     collection: 'Europe',
     subcollection: 'Italy',
+    instagram: 'C1Dj4PJpn8U/?img_index=6'
   },
   {
     id: 'Europe-9',
@@ -177,6 +183,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'architecture'],
     collection: 'Europe',
     subcollection: 'Italy',
+    instagram: 'C1Dj4PJpn8U/?img_index=5'
   },
   {
     id: 'Europe-10',
@@ -190,6 +197,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'nature'],
     collection: 'Europe',
     subcollection: 'Italy',
+    instagram: 'C1Dj4PJpn8U/?img_index=8'
   },
   {
     id: 'Europe-11',
@@ -229,6 +237,7 @@ export const photos: Photo[] = [
     category: ['landscape', 'architecture'],
     collection: 'Europe',
     subcollection: 'France',
+    instagram: 'C1Dj4PJpn8U/?img_index=10'
   },
   {
     id: 'Europe-14',
@@ -266,6 +275,7 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'architecture'],
     collection: 'Peru',
+    instagram: 'C7r_9pryB8B/?img_index=1'
   },
   {
     id: 'Peru-3',
@@ -291,6 +301,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'architecture', 'abstract'],
     collection: 'Peru',
+    instagram: 'C7r_9pryB8B/?img_index=7'
   },
   {
     id: 'Peru-5',
@@ -303,7 +314,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'architecture'],
     collection: 'Peru',
-    instagram: 'C7r_9pryB8B/?img_index=7'
+    instagram: 'C7r_9pryB8B/?img_index=3'
   },
   {
     id: 'Peru-6',
@@ -316,7 +327,7 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'nature'],
     collection: 'Peru',
-    instagram: 'C7r_9pryB8B/?img_index=8'
+    instagram: 'C7r_9pryB8B/?img_index=2'
   },
   {
     id: 'Peru-7',
@@ -342,7 +353,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'architecture'],
     collection: 'Peru',
-    instagram: 'C7r_9pryB8B/?img_index=2'
+    instagram: 'C7r_9pryB8B/?img_index=5'
   },
   {
     id: 'Peru-9',
@@ -355,7 +366,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'architecture'],
     collection: 'Peru',
-    instagram: 'C7r_9pryB8B/?img_index=5'
   },
   {
     id: 'Peru-10',
@@ -368,6 +378,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Peru',
+    instagram: 'C7r_9pryB8B/?img_index=8'
   },
   {
     id: 'Tulips-1',
@@ -445,6 +456,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
+    instagram: 'C6NNzvjJp2_/?img_index=6'
   },
   {
     id: 'Tulips-7',
@@ -457,7 +469,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Tulips',
-    instagram: 'C6NNzvjJp2_/?img_index=6'
   },
   {
     id: 'Tulips-8',
@@ -547,7 +558,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Bali',
-    instagram: 'DQzouvckjKQ/?img_index=4'
+    instagram: 'DQzouvckjKQ/?img_index=5'
   },
   {
     id: 'Bali-4',
@@ -560,7 +571,6 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'architecture'],
     collection: 'Bali',
-    instagram: 'DQzouvckjKQ/?img_index=2'
   },
   {
     id: 'Bali-5',
@@ -573,6 +583,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature'],
     collection: 'Bali',
+    instagram: 'DQzouvckjKQ/?img_index=2'
   },
   {
     id: 'Bali-6',
@@ -1104,6 +1115,7 @@ export const photos: Photo[] = [
     featured: false,
     category: ['landscape', 'nature', 'astro'],
     collection: 'Photography',
+    instagram: 'DY3jPmKG8nJ/?img_index=1'
   },
   {
     id: 'Space-Needle-1',
@@ -1116,6 +1128,7 @@ export const photos: Photo[] = [
     featured: true,
     category: ['landscape', 'architecture'],
     collection: 'Photography',
+    instagram: 'DMoGN2VhkvJ'
   },
 ]
 
