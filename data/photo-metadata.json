@@ -329,6 +329,16 @@
     "shutterSpeed": "1/60s",
     "iso": 1600
   },
+  "/photos/Egypt/Egypt-25.jpg": {
+    "dimensions": "6000 x 4000",
+    "camera": "Canon EOS Rebel SL3",
+    "lens": "EF-S18-55mm f/4-5.6 IS STM",
+    "dateTaken": "July 4, 2026",
+    "focalLength": "55mm",
+    "aperture": "f/8",
+    "shutterSpeed": "1/500s",
+    "iso": 100
+  },
   "/photos/Europe/Europe-01.jpg": {
     "dimensions": "6000 × 4000",
     "camera": "Canon EOS Rebel SL3",
