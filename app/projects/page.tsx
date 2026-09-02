@@ -38,8 +38,11 @@ export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('all')
   const [openPickerId, setOpenPickerId] = useState<string | null>(null)
 
-  const filtered =
+  const filtered = (
     activeFilter === 'all' ? projects : projects.filter((p) => p.category === activeFilter)
+  )
+    .slice()
+    .sort((a, b) => Number(!!b.featured) - Number(!!a.featured))
 
   const handleCardClick = (project: Project) => {
     const { outputUrl, sourceUrl } = project
