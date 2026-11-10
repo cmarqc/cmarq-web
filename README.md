@@ -60,3 +60,17 @@ The site runs as a Node.js web app (SSR + API routes), so it can no longer deplo
 1. In hPanel, create a **Node.js web app** and connect this GitHub repo (framework auto-detected).
 2. Create a MySQL database in hPanel → Databases, and set `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` (and optionally `INSTAGRAM_ACCESS_TOKEN`, `CRON_SECRET`, `ALERT_EMAIL_TO`) in the app's environment variables.
 3. Point the domain's DNS at Hostinger.
+
+### Why the build script passes `--webpack`
+
+**Don't remove that flag.** Next 16 defaults to Turbopack, and Turbopack requires Next's *native* SWC binary. Hostinger's servers run a glibc older than 2.29, so `@next/swc-linux-x64-gnu` can't load there:
+
+```
+/lib64/libm.so.6: version `GLIBC_2.29' not found
+```
+
+Next falls back to its WebAssembly SWC bindings, which webpack can use but Turbopack cannot, so a default `next build` dies with *"Turbopack is not supported on this platform"*. Building with webpack is Next's own documented workaround for exactly this case.
+
+Only the `build` script is affected. `dev` still uses Turbopack, since local machines have working native bindings — so there's no reason to give up the faster dev server.
+
+The trade-off is build speed: on Hostinger the WASM transform is noticeably slower than native SWC. If that ever becomes a problem, the alternative is to build in CI (GitHub Actions runners have modern glibc, so Turbopack works there) and deploy the prebuilt `.next` output instead of building on the host.
