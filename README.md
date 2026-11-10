@@ -44,10 +44,14 @@ Because a refresh returns a *new* token string, the live token is kept in MySQL 
 **What drives it.** Normal `/photography` traffic triggers a check at most every 6 hours, which is enough on its own. For quiet periods, point a daily cron at the upkeep endpoint:
 
 ```sh
-curl -fsS -H "Authorization: Bearer $CRON_SECRET" https://your-domain.com/api/instagram/token
+curl -fsS -H "Authorization: Bearer PASTE_THE_LITERAL_SECRET" https://your-domain.com/api/instagram/token
 ```
 
-On Hostinger that's hPanel → Advanced → Cron Jobs. The route needs `CRON_SECRET` set (without it, it's development-only) and accepts `?key=` instead of the header for schedulers that can't send one. It returns the token's state and days remaining without ever exposing the token, and answers `503` when something needs you — so a cron that mails on failure flags it independently of our own alert email. Add `?force=1` to refresh immediately, which is worth doing right after pasting in a new token (Meta still refuses tokens under 24 hours old).
+On Hostinger that's hPanel → Advanced → Cron Jobs. `CRON_SECRET` is a value you invent (`node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`) and set in the app's environment variables — it isn't issued by anyone, it just has to match what the caller sends.
+
+Paste the **literal** secret into the cron command rather than writing `$CRON_SECRET`: cron runs as a plain shell outside the Node app's environment, so that variable would expand to nothing and every run would quietly 401. The route also accepts `?key=<secret>` instead of the header, for schedulers that can't send one.
+
+Leaving `CRON_SECRET` unset locally is deliberate — the route is then open in development, so you can hit it without a header while testing. It's only ever required in production. It returns the token's state and days remaining without ever exposing the token, and answers `503` when something needs you — so a cron that mails on failure flags it independently of our own alert email. Add `?force=1` to refresh immediately, which is worth doing right after pasting in a new token (Meta still refuses tokens under 24 hours old).
 
 ## Deployment (Hostinger)
 
