@@ -383,6 +383,7 @@ export async function ensureFreshInstagramToken(force = false): Promise<TokenSta
     const previousAlert = { stage: state.alertStage, sentAt: state.alertSentAt }
     let refreshed = false
     let detail: string | undefined
+    let failureKind: RefreshFailure['kind'] | null = null
 
     // An unknown expiry means this token has never been refreshed, so do it
     // now — that's also how we find out when it runs out.
@@ -402,6 +403,7 @@ export async function ensureFreshInstagramToken(force = false): Promise<TokenSta
         refreshed = true
       } else {
         detail = result.detail
+        failureKind = result.kind
         if (result.kind === 'fatal') {
           console.error('[instagram] token refresh failed:', result.detail)
         } else {
@@ -415,7 +417,6 @@ export async function ensureFreshInstagramToken(force = false): Promise<TokenSta
     }
 
     const days = daysFrom(state.expiresAt)
-    const unresolvedFailure = detail != null && !refreshed
 
     // Work out how bad things are, worst case first.
     let stage: AlertStage | null = null
@@ -429,11 +430,18 @@ export async function ensureFreshInstagramToken(force = false): Promise<TokenSta
     } else if (days != null && days <= 14) {
       stage = 'warning'
       reportedState = 'warning'
-    } else if (unresolvedFailure && state.expiresAt == null) {
-      // Can't refresh and can't tell when it dies — worth knowing about.
+    } else if (failureKind === 'fatal') {
+      // Renewal is broken in a way only a human can fix, but there's still
+      // time on the clock — say so now rather than waiting for the deadline.
+      // (A fatal failure on a token of unknown expiry was dated above, so it
+      // has already been caught by the days <= 0 branch.)
       stage = 'refresh_failed'
       reportedState = 'error'
     } else if (state.expiresAt == null) {
+      // Seeded but not yet renewable — Meta rejects tokens under 24h old — or
+      // a transient blip. Both resolve on their own within a run or two, so
+      // they get no alert; if one somehow persists, the expiry ladder above
+      // becomes the safety net as the deadline approaches.
       reportedState = 'unknown'
     }
 
