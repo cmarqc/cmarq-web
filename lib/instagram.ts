@@ -7,6 +7,12 @@
 //
 // Per-photo merging works by setting the optional `instagram` field on a
 // photo in data/photos.ts to the post's shortcode (instagram.com/p/<shortcode>/).
+//
+// The token itself is managed by lib/instagram-token.ts, which renews it before
+// it can expire and emails if it ever can't. This module just asks for whatever
+// the current token is.
+
+import { getInstagramToken, maybeRunTokenMaintenance } from '@/lib/instagram-token'
 
 interface InstagramMedia {
   id: string
@@ -90,7 +96,11 @@ export function withImgIndex(permalink: string, imgIndex: number | undefined): s
 }
 
 export async function getInstagramStats(): Promise<InstagramStats | null> {
-  const token = process.env.INSTAGRAM_ACCESS_TOKEN
+  // Piggyback token upkeep on normal traffic (rate-limited internally to a few
+  // times a day) so renewal happens even without a cron job configured.
+  maybeRunTokenMaintenance()
+
+  const token = await getInstagramToken()
   if (!token) return null
   if (cache && Date.now() - cache.fetchedAt < CACHE_TTL_MS) return cache.data
 

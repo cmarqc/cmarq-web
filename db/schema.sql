@@ -49,3 +49,27 @@ CREATE TABLE IF NOT EXISTS download_events (
   INDEX idx_download_events_item (order_item_id),
   CONSTRAINT fk_download_events_item FOREIGN KEY (order_item_id) REFERENCES order_items (id) ON DELETE CASCADE
 );
+
+-- ── Instagram access token ──────────────────────────────────────────────────
+-- Single row (id = 1) holding the live long-lived Instagram token so it can be
+-- refreshed automatically — a refresh returns a NEW token string, which has to
+-- be persisted somewhere writable. Seeded from INSTAGRAM_ACCESS_TOKEN; the app
+-- creates this table automatically too (see lib/db.ts).
+--
+-- `seed_fingerprint` is the SHA-256 of the INSTAGRAM_ACCESS_TOKEN this row grew
+-- from, so that hand-rotating the env var is detected and takes over the row.
+-- Timestamps are epoch milliseconds (BIGINT) to stay free of server/DB timezone
+-- disagreements; read them with FROM_UNIXTIME(expires_at / 1000).
+
+CREATE TABLE IF NOT EXISTS instagram_token (
+  id TINYINT UNSIGNED NOT NULL PRIMARY KEY,
+  access_token TEXT NOT NULL,
+  seed_fingerprint CHAR(64) NOT NULL,
+  expires_at BIGINT UNSIGNED NULL,
+  refreshed_at BIGINT UNSIGNED NULL,
+  -- Most recent alert emailed about this token, so the same warning isn't
+  -- repeated on every run: warning | urgent | refresh_failed | expired.
+  alert_stage VARCHAR(16) NULL,
+  alert_sent_at BIGINT UNSIGNED NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

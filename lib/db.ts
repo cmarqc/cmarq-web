@@ -3,6 +3,7 @@ import mysql from 'mysql2/promise'
 let pool: mysql.Pool | null = null
 let schemaReady: Promise<unknown> | null = null
 let ordersSchemaReady: Promise<unknown> | null = null
+let tokensSchemaReady: Promise<unknown> | null = null
 let warnedNotConfigured = false
 
 /**
@@ -128,5 +129,35 @@ export async function ordersDb(): Promise<mysql.Pool> {
     })
   }
   await ordersSchemaReady
+  return p
+}
+
+/**
+ * Returns the connection pool with the `instagram_token` table created on first
+ * use — the single-row store that lets the Instagram access token be refreshed
+ * automatically instead of being pinned to an env var. See lib/instagram-token.ts.
+ */
+export async function tokensDb(): Promise<mysql.Pool> {
+  const p = getPool()
+  if (!tokensSchemaReady) {
+    tokensSchemaReady = p
+      .query(
+        `CREATE TABLE IF NOT EXISTS instagram_token (
+          id TINYINT UNSIGNED NOT NULL PRIMARY KEY,
+          access_token TEXT NOT NULL,
+          seed_fingerprint CHAR(64) NOT NULL,
+          expires_at BIGINT UNSIGNED NULL,
+          refreshed_at BIGINT UNSIGNED NULL,
+          alert_stage VARCHAR(16) NULL,
+          alert_sent_at BIGINT UNSIGNED NULL,
+          updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        )`,
+      )
+      .catch((err) => {
+        tokensSchemaReady = null
+        throw err
+      })
+  }
+  await tokensSchemaReady
   return p
 }

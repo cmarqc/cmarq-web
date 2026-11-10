@@ -64,6 +64,47 @@ function escapeHtml(s: string): string {
 }
 
 /**
+ * Where operational alerts go (expiring credentials and the like). Falls back
+ * to EMAIL_REPLY_TO, which is already your own inbox, so alerting works
+ * without any extra configuration.
+ */
+function alertRecipient(): string | null {
+  return process.env.ALERT_EMAIL_TO || process.env.EMAIL_REPLY_TO || null
+}
+
+/**
+ * Sends an operational alert to the site owner. Returns whether it actually
+ * went out — callers use that to decide whether to retry later, so this never
+ * throws on a delivery failure.
+ */
+export async function sendAlertEmail(subject: string, html: string): Promise<boolean> {
+  const to = alertRecipient()
+  if (!isEmailConfigured() || !to) {
+    console.warn(
+      `[alert] not sent ("${subject}") — set RESEND_API_KEY, EMAIL_FROM and ALERT_EMAIL_TO (or EMAIL_REPLY_TO)`,
+    )
+    return false
+  }
+  try {
+    const { error } = await resend().emails.send({
+      from: process.env.EMAIL_FROM!,
+      to,
+      subject,
+      html,
+    })
+    if (error) {
+      console.error(`[alert] send failed ("${subject}"):`, error.message)
+      return false
+    }
+    console.log(`[alert] sent to ${to}: ${subject}`)
+    return true
+  } catch (err) {
+    console.error(`[alert] send threw ("${subject}"):`, err)
+    return false
+  }
+}
+
+/**
  * Sends the buyer their purchase / downloads link. Throws on failure so callers
  * can decide whether to swallow it (fulfillment does — email is best-effort).
  */
